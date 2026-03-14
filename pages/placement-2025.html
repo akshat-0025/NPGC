@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Results 2024–25 – NPGC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/placement.css">
+    <link rel="stylesheet" href="../assets/css/placement-2024.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- ── HERO ── -->
+    <header class="hero-section">
+        <div class="gradient-overlay-v"></div>
+        <div class="container text-center text-white position-relative z-3">
+            <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase">
+                Placement Results
+            </span>
+            <h2 class="main-title fw-black text-uppercase mb-3">
+                Results<br>2024–25
+            </h2>
+            <p class="lead mx-auto mb-5 opacity-75 main-description">
+                Student Placement Results for the Academic Year 2024–25 —
+                National Post Graduate College, Lucknow.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mb-5 pb-5">
+                <a href="#results" class="btn btn-menu btn-lg px-5 py-3 fw-bold">View Results</a>
+            </div>
+            <div class="row g-4 mt-5 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">326</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Students Placed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">6.5 LPA</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Top Package</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">25+</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Companies</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">16+</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Programmes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── PAGE INTRO + STAT STRIP ── -->
+    <section class="pr-hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="pr-year-badge">Academic Year 2024 – 25</div>
+                    <h1 class="pr-title">Student<br>Placement <span>Results</span></h1>
+                    <p class="pr-sub">
+                        326 students from UG, PG and Vocational programmes were successfully
+                        placed with leading companies across India, with packages ranging
+                        from ₹1.65 LPA to ₹6.50 LPA.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stat-strip">
+                        <div class="ss-item">
+                            <div class="ss-num">326</div>
+                            <div class="ss-lbl">Total Placed</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num"><span>6.5</span> LPA</div>
+                            <div class="ss-lbl">Highest Package</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num">25<span>+</span></div>
+                            <div class="ss-lbl">Recruiters</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num">16<span>+</span></div>
+                            <div class="ss-lbl">Programmes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COMPANIES ── -->
+    <section class="companies-sec">
+        <div class="container">
+            <div class="row align-items-end mb-2">
+                <div class="col">
+                    <span class="sec-label">Hiring Partners</span>
+                    <h2 class="sec-h mt-2">Recruiting <span class="acc">Companies</span></h2>
+                    <div class="stripe"></div>
+                </div>
+            </div>
+            <div class="company-grid" id="companyGrid"></div>
+        </div>
+    </section>
+
+    <!-- ── RESULTS TABLE ── -->
+    <section class="results-sec" id="results">
+        <div class="container">
+            <div class="row align-items-end mb-4">
+                <div class="col-lg-6">
+                    <span class="sec-label">Full Data</span>
+                    <h2 class="sec-h mt-2">Placement <span class="acc">Records</span></h2>
+                    <div class="stripe"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="course-filters" id="courseFilters"></div>
+                <div class="search-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search name, company…">
+                </div>
+            </div>
+
+            <div class="res-count" id="resCount"></div>
+
+            <div class="results-tbl-wrap">
+                <table class="rtbl">
+                    <thead>
+                        <tr>
+                            <th class="td-sno">#</th>
+                            <th data-col="name">Name <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="course">Course <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="company">Company <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="salary">Package <i class="fa-solid fa-sort sort-icon"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BACK LINK ── -->
+    <section class="back-sec">
+        <div class="container text-center">
+            <a href="../pages/Placement-2024.html" class="btn-rd me-3">
+                <i class="fa-solid fa-arrow-left"></i>View 2023–24 Results
+            </a>
+            <a href="../pages/StudentSupport-Placements.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>Back to Placement Cell
+            </a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    /* ════════════════════════════════════
+       DATA — 2024-25 (326 records)
+    ════════════════════════════════════ */
+    const placements = [
+        {no:1,   name:"Anjali Pandey",           course:"B.Voc.(B&F)",          company:"Planet Spark",                      salary:650000},
+        {no:2,   name:"Mahvish Zafar",            course:"B.Com.(Hons.)",         company:"RnF Technologies",                  salary:600000},
+        {no:3,   name:"Yashree Singhal",          course:"M.Com.",                company:"SIDBI",                             salary:480000},
+        {no:4,   name:"Achyut Mehrotra",          course:"M.Voc.(BSI)",           company:"IDFC First Bank",                   salary:436000},
+        {no:5,   name:"Anshika Dinkar",           course:"B.Voc.(B&F)",          company:"IDFC First Bank",                   salary:436000},
+        {no:6,   name:"Ayushi Gupta",             course:"BCA",                   company:"IDFC First Bank",                   salary:436000},
+        {no:7,   name:"Jahnavi Yadav",            course:"B.Com.",                company:"IDFC First Bank",                   salary:436000},
+        {no:8,   name:"Prince Mishra",            course:"BCA",                   company:"IDFC First Bank",                   salary:436000},
+        {no:9,   name:"Rajeev Singh Bhattal",     course:"B.Voc.(B&F)",          company:"IDFC First Bank",                   salary:436000},
+        {no:10,  name:"Shriyansh Raj Srivastava", course:"B.Com.",                company:"IDFC First Bank",                   salary:436000},
+        {no:11,  name:"Vaishnavi Awasthi",        course:"BCA",                   company:"IDFC First Bank",                   salary:436000},
+        {no:12,  name:"Tannushree Singh",         course:"BBA",                   company:"Academor",                          salary:400000},
+        {no:13,  name:"Saksham Srivastava",       course:"B.Com.",                company:"Academor",                          salary:400000},
+        {no:14,  name:"Akshansh Srivastava",      course:"B.Com.",                company:"Academor",                          salary:400000},
+        {no:15,  name:"Shagun Shukla",            course:"M.Com.",                company:"Academor",                          salary:400000},
+        {no:16,  name:"Arpita Singh",             course:"BBA",                   company:"Academor",                          salary:400000},
+        {no:17,  name:"Krati Mehrotra",           course:"B.Voc.(B&F)",          company:"Academor",                          salary:400000},
+        {no:18,  name:"Namrata Mittal",           course:"M.Com.",                company:"Academor",                          salary:400000},
+        {no:19,  name:"Varun Sahu",               course:"B.Com.",                company:"Sitara Sewa Grih",                  salary:400000},
+        {no:20,  name:"Shubh Dodwani",            course:"B.Com.",                company:"Sitara Sewa Grih",                  salary:400000},
+        {no:21,  name:"Apurva Tiwari",            course:"BCA",                   company:"CMS Robotics Lab",                  salary:360000},
+        {no:22,  name:"Dhruv Singh Negi",         course:"BCA",                   company:"CMS Robotics Lab",                  salary:360000},
+        {no:23,  name:"Pranjal Sharma",           course:"B.Com.",                company:"Birla Opus",                        salary:350000},
+        {no:24,  name:"Riya Kumari",              course:"M.Voc.(BSI)",           company:"Wipro HR Services",                 salary:308000},
+        {no:25,  name:"Apurva Tiwari",            course:"BCA",                   company:"EaseMyTrip",                        salary:300000},
+        {no:26,  name:"Arushi Dixit",             course:"BBA",                   company:"EaseMyTrip",                        salary:300000},
+        {no:27,  name:"Avinash Kumar",            course:"B.Voc.(B&F)",          company:"EaseMyTrip",                        salary:300000},
+        {no:28,  name:"Disha Pandey",             course:"BCA",                   company:"EaseMyTrip",                        salary:300000},
+        {no:29,  name:"Lakshya Srivastava",       course:"B.Voc.(B&F)",          company:"EaseMyTrip",                        salary:300000},
+        {no:30,  name:"Pari Gupta",               course:"BCA",                   company:"EaseMyTrip",                        salary:300000},
+        {no:31,  name:"Rishabh Arora",            course:"B.Voc.(B&F)",          company:"EaseMyTrip",                        salary:300000},
+        {no:32,  name:"Shrishti Kashyap",         course:"B.Voc.(SDEG)",         company:"EaseMyTrip",                        salary:300000},
+        {no:33,  name:"Vaishnavi Tiwari",         course:"B.Voc.(B&F)",          company:"EaseMyTrip",                        salary:300000},
+        {no:34,  name:"Sanskriti Sawant",         course:"BBA",                   company:"NextHire",                          salary:300000},
+        {no:35,  name:"Sneha Gupta",              course:"B.Voc.(B&F)",          company:"Axis Bank",                         salary:300000},
+        {no:36,  name:"Syed Ahsab Ahmad",         course:"B.Com.",                company:"Axis Bank",                         salary:300000},
+        {no:37,  name:"Vaishnavi Tiwari",         course:"B.Voc.(B&F)",          company:"HCL Tech",                          salary:300000},
+        {no:38,  name:"Aisha Siddiqui",           course:"BCA",                   company:"HCL Tech",                          salary:240000},
+        {no:39,  name:"Prerna Bisht",             course:"BCA",                   company:"HCL Tech",                          salary:240000},
+        {no:40,  name:"Anushka Sharma",           course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:41,  name:"Adhya Sinha",              course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:42,  name:"Yashi Chopra",             course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:43,  name:"Shrishti Bhaduri",         course:"B.Com.(Hons.)",         company:"HCL Tech",                          salary:240000},
+        {no:44,  name:"Ayushi Singh",             course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:45,  name:"Nandini Mehta",            course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:46,  name:"Menka Agarwal",            course:"B.Voc.(B&F)",          company:"HCL Tech",                          salary:240000},
+        {no:47,  name:"Simran Kanojiya",          course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:48,  name:"Mohammad Omair",           course:"BBA",                   company:"HCL Tech",                          salary:240000},
+        {no:49,  name:"Harshdeep Singh Arora",    course:"BBA",                   company:"HCL Tech",                          salary:240000},
+        {no:50,  name:"Akshita Bajpai",           course:"B.Voc.(B&F)",          company:"HCL Tech",                          salary:240000},
+        {no:51,  name:"Pratishtha V Jaiswal",     course:"B.Voc.(B&F)",          company:"HCL Tech",                          salary:240000},
+        {no:52,  name:"Asma Khan",                course:"B.Voc.(B&F)",          company:"HCL Tech",                          salary:240000},
+        {no:53,  name:"Harsh Mishra",             course:"B.Com.",                company:"HCL Tech",                          salary:240000},
+        {no:54,  name:"Princy Yadav",             course:"M.A.(Economics)",       company:"Disha Placement Services",          salary:220000},
+        {no:55,  name:"Sanidhya Tekwani",         course:"B.Com.",                company:"Disha Placement Services",          salary:220000},
+        {no:56,  name:"Disha Jaiswal",            course:"B.Com.(Hons.)",         company:"Disha Placement Services",          salary:220000},
+        {no:57,  name:"Anuja Mishra",             course:"B.A.",                  company:"Disha Placement Services",          salary:220000},
+        {no:58,  name:"Sovendra Singh",           course:"M.A.(Economics)",       company:"Disha Placement Services",          salary:220000},
+        {no:59,  name:"Anjali Pandey",            course:"B.Voc.(B&F)",          company:"Disha Placement Services",          salary:220000},
+        {no:60,  name:"Akshara Pandey",           course:"B.Com.(Hons.)",         company:"Disha Placement Services",          salary:220000},
+        {no:61,  name:"Dilpreet Kaur",            course:"M.A.(Economics)",       company:"Disha Placement Services",          salary:220000},
+        {no:62,  name:"Prakhar Mishra",           course:"M.Sc.(Chemistry)",      company:"RSPL Ltd.",                         salary:220000},
+        {no:63,  name:"Sandeep Kumar",            course:"M.Sc.(Chemistry)",      company:"RSPL Ltd.",                         salary:220000},
+        {no:64,  name:"Sudhanshu Shukla",         course:"M.Sc.(Chemistry)",      company:"RSPL Ltd.",                         salary:220000},
+        {no:65,  name:"Bhaskar Sharma",           course:"B.Sc.",                 company:"RSPL Ltd.",                         salary:180000},
+        {no:66,  name:"Gurneet Kaur",             course:"B.Sc.",                 company:"RSPL Ltd.",                         salary:180000},
+        {no:67,  name:"Deeksha Verma",            course:"B.Com.",                company:"Genpact",                           salary:177000},
+        {no:68,  name:"Faiz Raza Khan",           course:"B.Voc.(B&F)",          company:"Genpact",                           salary:177000},
+        {no:69,  name:"Khushi Srivastava",        course:"B.Com.(Hons.)",         company:"Genpact",                           salary:177000},
+        {no:70,  name:"Muskan Pandey",            course:"B.Com.",                company:"Genpact",                           salary:177000},
+        {no:71,  name:"Sadhvi Arora",             course:"B.Com.",                company:"Genpact",                           salary:177000},
+        {no:72,  name:"Shagun Shukla",            course:"M.Com.",                company:"Genpact",                           salary:177000},
+        {no:73,  name:"Tanu Jaiswal",             course:"B.Com.",                company:"Genpact",                           salary:177000},
+        {no:74,  name:"Deepanshi Verma",          course:"B.Com.",                company:"Axis Bank",                         salary:300000},
+        {no:75,  name:"Ishu Jain",                course:"B.Com.(Hons.)",         company:"Axis Bank",                         salary:300000},
+        {no:76,  name:"Arushi",                   course:"BBA",                   company:"Axis Bank",                         salary:300000},
+        {no:77,  name:"Ashish Srivastava",        course:"B.Com.",                company:"Axis Bank",                         salary:300000},
+        {no:78,  name:"Gauri Singh",              course:"B.Com.",                company:"Axis Bank",                         salary:300000},
+        {no:79,  name:"Anjali Pandey",            course:"B.Voc.(B&F)",          company:"Axis Bank",                         salary:300000},
+        {no:80,  name:"Shashank Kumar Singh",     course:"B.Sc.",                 company:"Lulu India Shopping Malls",         salary:220000},
+        {no:81,  name:"Saurabh Kumar",            course:"B.A.",                  company:"Lulu India Shopping Malls",         salary:220000},
+        {no:82,  name:"Anshumesh Tiwari",         course:"B.Com.",                company:"Lulu India Shopping Malls",         salary:220000},
+        {no:83,  name:"Krishna Yadav",            course:"B.Com.",                company:"Lulu India Shopping Malls",         salary:220000},
+        {no:84,  name:"Sanjana Yadav",            course:"B.A.",                  company:"Lulu India Shopping Malls",         salary:220000},
+        {no:85,  name:"Ansh Kumar",               course:"B.Com.",                company:"Lulu India Shopping Malls",         salary:220000},
+        {no:86,  name:"Akanksha Maurya",          course:"B.Voc.(SDEG)",         company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:87,  name:"Anamika Verma",            course:"B.Voc.(B&F)",          company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:88,  name:"Anjali Singh",             course:"B.Voc.(SDEG)",         company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:89,  name:"Disha Srivastava",         course:"B.Voc.(B&F)",          company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:90,  name:"Nishant Tiwari",           course:"B.Sc.",                 company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:91,  name:"Pragya Tripathi",          course:"B.A.",                  company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:92,  name:"Raghav Singh",             course:"B.Sc.",                 company:"Aditya Birla Fashion & Retail",     salary:180000},
+        {no:93,  name:"Janhvi Jaiswal",           course:"B.Voc.(SDEG)",         company:"Axis Max Life",                     salary:240000},
+        {no:94,  name:"Nimesh Shukla",            course:"B.Voc.(SDEG)",         company:"Axis Max Life",                     salary:240000},
+        {no:95,  name:"Pragati Agarwal",          course:"B.Com.",                company:"Axis Max Life",                     salary:240000},
+        {no:96,  name:"Anuja Mishra",             course:"B.A.",                  company:"Axis Max Life",                     salary:240000},
+        {no:97,  name:"Sriyansh Tiwari",          course:"BBA",                   company:"Axis Max Life",                     salary:240000},
+        {no:98,  name:"Astha Gupta",              course:"BBA",                   company:"Axis Max Life",                     salary:240000},
+        {no:99,  name:"Divyanshu Singh",          course:"BBA",                   company:"Axis Max Life",                     salary:240000},
+        {no:100, name:"Anushka Shukla",           course:"B.Voc.(B&F)",          company:"Sanmarg Event Expert",              salary:240000},
+        {no:101, name:"Aditya Pratap Singh",      course:"B.Voc.(SDEG)",         company:"Sun Shaper Energy",                 salary:240000},
+        {no:102, name:"Tushar Gupta",             course:"B.Com.",                company:"Sun Shaper Energy",                 salary:240000},
+        {no:103, name:"Sankshita Samal",          course:"M.Com.",                company:"Airtel",                            salary:240000},
+        {no:104, name:"Razeen Azam",              course:"M.Com.",                company:"Airtel",                            salary:240000},
+        {no:105, name:"Vedilka Pathak",           course:"BBA",                   company:"Airtel",                            salary:240000},
+        {no:106, name:"Ajeet Kumar",              course:"B.Com.",                company:"Airtel",                            salary:240000},
+        {no:107, name:"Arjun Awasthi",            course:"B.Voc.(SDEG)",         company:"Airtel",                            salary:240000},
+        {no:108, name:"Adarsh Pandey",            course:"M.Voc.(BSI)",           company:"Startek",                           salary:240000},
+        {no:109, name:"Aditi Chaurasia",          course:"B.Voc.(B&F)",          company:"Startek",                           salary:240000},
+        {no:110, name:"Aditi Verma",              course:"BBA",                   company:"Startek",                           salary:240000},
+        {no:111, name:"Ankit Verma",              course:"B.Voc.(B&F)",          company:"Startek",                           salary:240000},
+        {no:112, name:"Ankita Singh",             course:"M.Com.",                company:"Startek",                           salary:240000},
+        {no:113, name:"Artika Srivastava",        course:"M.Voc.(BSI)",           company:"Startek",                           salary:240000},
+        {no:114, name:"Devanshi Nigam",           course:"M.Com.",                company:"Startek",                           salary:240000},
+        {no:115, name:"Disha Srivastava",         course:"B.Voc.(B&F)",          company:"Startek",                           salary:240000},
+        {no:116, name:"Faiza Feroz",              course:"B.Com.",                company:"Startek",                           salary:240000},
+        {no:117, name:"Hansleen Kaur",            course:"BBA",                   company:"Startek",                           salary:240000},
+        {no:118, name:"Ishu Jain",                course:"B.Com.(Hons.)",         company:"Startek",                           salary:240000},
+        {no:119, name:"Jahanvi Porwal",           course:"B.A.",                  company:"Startek",                           salary:240000},
+        {no:120, name:"Mehak Srivastava",         course:"B.Voc.(B&F)",          company:"Startek",                           salary:240000},
+        {no:121, name:"Pinank Toppo",             course:"BBA",                   company:"Startek",                           salary:240000},
+        {no:122, name:"Shaivy Uppal",             course:"B.Com.",                company:"Startek",                           salary:240000},
+        {no:123, name:"Shaurya Verma",            course:"B.Voc.(B&F)",          company:"Startek",                           salary:240000},
+        {no:124, name:"Shivanshi Srivastav",      course:"M.Voc.(BSI)",           company:"Startek",                           salary:240000},
+        {no:125, name:"Shobhit",                  course:"B.A.",                  company:"Startek",                           salary:240000},
+        {no:126, name:"Shubhra Tiwari",           course:"M.Com.",                company:"Startek",                           salary:240000},
+        {no:127, name:"Sujal Chaudhary",          course:"BBA",                   company:"Startek",                           salary:240000},
+        {no:128, name:"Tanishka Tiwari",          course:"BBA",                   company:"Startek",                           salary:240000},
+        {no:129, name:"Taranjeet Kaur",           course:"B.Com.",                company:"Startek",                           salary:240000},
+        {no:130, name:"Utkarsh Singh",            course:"M.Com.",                company:"Startek",                           salary:240000},
+        {no:131, name:"Vaishnavi Singh",          course:"B.A.",                  company:"Startek",                           salary:240000},
+        {no:132, name:"Abhishek",                 course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:133, name:"Akash Sahu",               course:"B.Voc.(B&F)",          company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:134, name:"Akshat Mittal",            course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:135, name:"Akshat Srivastava",        course:"B.Com.",                company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:136, name:"Alok Singh",               course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:137, name:"Ankita Singh",             course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:138, name:"Anushka Sharma",           course:"B.Com.",                company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:139, name:"Ayush Srivastava",         course:"B.Voc.(B&F)",          company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:140, name:"Harsh Kashyap",            course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:141, name:"Harsh Sahai",              course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:142, name:"Janhvi Jaiswal",           course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:143, name:"Mirza Saad Beg",           course:"BCA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:144, name:"Neha Yadav",               course:"B.Sc.",                 company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:145, name:"Piya Gupta",               course:"M.A.(Psychology)",      company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:146, name:"Pooja Singh",              course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:147, name:"Prince Kumar Jha",         course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:148, name:"Sanskriti Srivastava",     course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:149, name:"Sarvjeet Kumar",           course:"B.Com.",                company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:150, name:"Satyam Yadav",             course:"B.A.",                  company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:151, name:"Saurabh Yadav",            course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:152, name:"Shivansh",                 course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:153, name:"Shobhit Kesarwani",        course:"B.A.",                  company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:154, name:"Sneha Singh",              course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:155, name:"Utkarsh Dixit",            course:"B.A.",                  company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:156, name:"Vaishnavi Singh",          course:"B.A.",                  company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:157, name:"Vandana Mehra",            course:"B.Sc.",                 company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:158, name:"Vishakha Mehta",           course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:159, name:"Yash",                     course:"B.Voc.(SDEG)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:160, name:"Sanchita Rastogi",         course:"B.Com.(Hons.)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:161, name:"Yash Jaiswal",             course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:162, name:"Shruti Mishra",            course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:163, name:"Shruti Singh",             course:"B.Com.(Hons.)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:164, name:"Vaishnavi Singh",          course:"B.A.",                  company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:165, name:"Pinank Toppo",             course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:166, name:"Rajat Gupta",              course:"B.Com.(Hons.)",         company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:167, name:"Gunjan Agarwal",           course:"BBA",                   company:"RV Planet Pvt. Ltd.",               salary:180000},
+        {no:168, name:"Anand Jaiswal",            course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:169, name:"Anant Singh Kushwaha",     course:"B.Voc.(SDEG)",         company:"Adda247",                           salary:300000},
+        {no:170, name:"Anjali Pal",               course:"M.Com.",                company:"Adda247",                           salary:300000},
+        {no:171, name:"Anjali Singh",             course:"B.Voc.(B&F)",          company:"Adda247",                           salary:300000},
+        {no:172, name:"Anushka Dubey",            course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:173, name:"Ashi Srivastava",          course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:174, name:"Devanshi Nigam",           course:"M.Com.",                company:"Adda247",                           salary:300000},
+        {no:175, name:"Durga Singh Negi",         course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:176, name:"Faisal Ahmad",             course:"BAJMC",                 company:"Adda247",                           salary:300000},
+        {no:177, name:"Gauri Singh",              course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:178, name:"Gurneet Kaur",             course:"B.Sc.",                 company:"Adda247",                           salary:300000},
+        {no:179, name:"Harshit",                  course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:180, name:"Krishna Yadav",            course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:181, name:"Mirza Saad Beg",           course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:182, name:"Mohd Kaif Ansari",         course:"B.Voc.(B&F)",          company:"Adda247",                           salary:300000},
+        {no:183, name:"Mridul Gupta",             course:"M.Voc.(SDEG)",         company:"Adda247",                           salary:300000},
+        {no:184, name:"Nishant Singh",            course:"B.Sc.",                 company:"Adda247",                           salary:300000},
+        {no:185, name:"Palak Gautam",             course:"M.Voc.(BSI)",           company:"Adda247",                           salary:300000},
+        {no:186, name:"Prachi Yadav",             course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:187, name:"Priya Singh",              course:"B.Voc.(B&F)",          company:"Adda247",                           salary:300000},
+        {no:188, name:"Raghav Singh",             course:"B.Sc.",                 company:"Adda247",                           salary:300000},
+        {no:189, name:"Rishabh Gupta",            course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:190, name:"Riya Yadav",               course:"BCA",                   company:"Adda247",                           salary:300000},
+        {no:191, name:"Satyendra Singh",          course:"B.Voc.(SDEG)",         company:"Adda247",                           salary:300000},
+        {no:192, name:"Shivangini Yadav",         course:"B.Sc.",                 company:"Adda247",                           salary:300000},
+        {no:193, name:"Shobhit Kesarwani",        course:"M.A.(Pol. Science)",    company:"Adda247",                           salary:300000},
+        {no:194, name:"Shruti Gupta",             course:"BAJMC",                 company:"Adda247",                           salary:300000},
+        {no:195, name:"Smita Gaurav",             course:"B.A.",                  company:"Adda247",                           salary:300000},
+        {no:196, name:"Tanishq",                  course:"B.A.",                  company:"Adda247",                           salary:300000},
+        {no:197, name:"Uday Singh",               course:"B.Com.",                company:"Adda247",                           salary:300000},
+        {no:198, name:"Utkarsh Singh",            course:"M.Com.",                company:"Adda247",                           salary:300000},
+        {no:199, name:"Virat Singh",              course:"B.Voc.(SDEG)",         company:"Adda247",                           salary:300000},
+        {no:200, name:"Yashi Srivastava",         course:"B.A.",                  company:"Adda247",                           salary:300000},
+        {no:201, name:"Yusra",                    course:"B.Voc.(B&F)",          company:"Adda247",                           salary:300000},
+        {no:202, name:"Geetika Arjel",            course:"BCA",                   company:"Learntrail",                        salary:280000},
+        {no:203, name:"Harsh Kashyap",            course:"B.Voc.(SDEG)",         company:"Learntrail",                        salary:280000},
+        {no:204, name:"Srajan Saxena",            course:"BCA",                   company:"Learntrail",                        salary:280000},
+        {no:205, name:"Pari Gupta",               course:"BCA",                   company:"Learntrail",                        salary:280000},
+        {no:206, name:"Neha Yadav",               course:"B.Sc.",                 company:"Learntrail",                        salary:280000},
+        {no:207, name:"Yashika Sharma",           course:"B.Voc.(SDEG)",         company:"Learntrail",                        salary:280000},
+        {no:208, name:"Vaishnavi Singh",          course:"B.A.",                  company:"Learntrail",                        salary:280000},
+        {no:209, name:"Sanskriti Srivastava",     course:"B.Voc.(B&F)",          company:"Learntrail",                        salary:280000},
+        {no:210, name:"Arjun Awasthi",            course:"B.Voc.(SDEG)",         company:"Learntrail",                        salary:280000},
+        {no:211, name:"Hitesh Sadhwani",          course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:212, name:"Damini Singh",             course:"M.Voc.(BSI)",           company:"Nector Infotel",                    salary:165000},
+        {no:213, name:"Ankita Singh",             course:"M.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:214, name:"Faiza Feroz",              course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:215, name:"Akash Sahu",               course:"B.Voc.(SDEG)",         company:"Nector Infotel",                    salary:165000},
+        {no:216, name:"Shreya Singh",             course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:217, name:"Raj Awasthi",              course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:218, name:"Ansh Vikram Singh",        course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:219, name:"Khushi Pandey",            course:"B.Com.",                company:"Nector Infotel",                    salary:165000},
+        {no:220, name:"Uday Singh",               course:"B.Voc.(SDEG)",         company:"Digital Das",                       salary:240000},
+        {no:221, name:"Satyendra Singh",          course:"B.A.",                  company:"Digital Das",                       salary:240000},
+        {no:222, name:"Anant Singh",              course:"BCA",                   company:"Digital Das",                       salary:240000},
+        {no:223, name:"Shivangini Yadav",         course:"B.Sc.",                 company:"Digital Das",                       salary:240000},
+        {no:224, name:"Neha Yadav",               course:"B.Sc.",                 company:"Digital Das",                       salary:240000},
+        {no:225, name:"Shaheen Khatoon",          course:"BCA",                   company:"Digital Das",                       salary:240000},
+        {no:226, name:"Mitali Agarwal",           course:"M.Com.",                company:"Digital Das",                       salary:240000},
+        {no:227, name:"Sneha Sahitya",            course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:228, name:"Anjali Pal",               course:"M.Com.",                company:"Digital Das",                       salary:240000},
+        {no:229, name:"Faizal Ahmed",             course:"BAJMC",                 company:"Digital Das",                       salary:240000},
+        {no:230, name:"Rachit Bansal",            course:"B.Com.(Hons.)",         company:"Digital Das",                       salary:240000},
+        {no:231, name:"Sneha Singh",              course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:232, name:"Durga Singh Negi",         course:"BCA",                   company:"Digital Das",                       salary:240000},
+        {no:233, name:"Anshumesh Tiwari",         course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:234, name:"Shivansh Yadav",           course:"B.Voc.(SDEG)",         company:"Digital Das",                       salary:240000},
+        {no:235, name:"Priya Singh",              course:"B.Voc.(B&F)",          company:"Digital Das",                       salary:240000},
+        {no:236, name:"Palak Mendiratta",         course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:237, name:"Ayan Sircar",              course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:238, name:"Arjun Awasthi",            course:"B.Voc.(SDEG)",         company:"Digital Das",                       salary:240000},
+        {no:239, name:"Pinank Toppo",             course:"BBA",                   company:"Digital Das",                       salary:240000},
+        {no:240, name:"Utkarsh Bhatnagar",        course:"BAJMC",                 company:"Digital Das",                       salary:240000},
+        {no:241, name:"Anushka Shukla",           course:"B.Voc.(B&F)",          company:"Digital Das",                       salary:240000},
+        {no:242, name:"Smita Gaurav",             course:"B.A.",                  company:"Digital Das",                       salary:240000},
+        {no:243, name:"Prashant Singh",           course:"BAJMC",                 company:"Digital Das",                       salary:240000},
+        {no:244, name:"Akshat Srivastava",        course:"B.Com.",                company:"Digital Das",                       salary:240000},
+        {no:245, name:"Shubhra Tiwari",           course:"M.Com.",                company:"Digital Das",                       salary:240000},
+        {no:246, name:"Gunjan Agarwal",           course:"BBA",                   company:"Digital Das",                       salary:240000},
+        {no:247, name:"Siddhartha Dixit",         course:"BBA",                   company:"Ignitia Infotech",                  salary:205000},
+        {no:248, name:"Anjali Pal",               course:"M.Com.",                company:"Ignitia Infotech",                  salary:205000},
+        {no:249, name:"Sneha Sahetya",            course:"B.Com.",                company:"Ignitia Infotech",                  salary:205000},
+        {no:250, name:"Sarthak Agarwal",          course:"B.Com.(Hons.)",         company:"Ignitia Infotech",                  salary:205000},
+        {no:251, name:"Aditi Verma",              course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:252, name:"Yashi Chopra",             course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:253, name:"Sarvjeet Kumar",           course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:254, name:"Jahanvi Singh",            course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:255, name:"Aabha Agrawal",            course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:256, name:"Jatin Joshi",              course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:257, name:"Akshat Srivastava",        course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:258, name:"Shruti Mishra",            course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:259, name:"Gunjan Agarwal",           course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:260, name:"Adarsh Singh",             course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:261, name:"Rachit Jalan",             course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:262, name:"Akshat Chaturvedi",        course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:263, name:"Sujal Chaudhary",          course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:264, name:"Astha Gupta",              course:"M.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:265, name:"Anushka Tiwari",           course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:266, name:"Hansleen Kaur",            course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:267, name:"Parul Singh",              course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:268, name:"Shreya Srivastava",        course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:269, name:"Lavish Guha",              course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:270, name:"Abhijeet Gupta",           course:"B.A.",                  company:"HDFC Bank",                         salary:450000},
+        {no:271, name:"Anshumesh Tiwari",         course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:272, name:"Anamika Dubey",            course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:273, name:"Anushika Bansal",          course:"B.Com.(Hons.)",         company:"HDFC Bank",                         salary:450000},
+        {no:274, name:"Anushka Sharma",           course:"B.Com.",                company:"HDFC Bank",                         salary:450000},
+        {no:275, name:"Pinak Toppo",              course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:276, name:"Akshay Shukla",            course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:277, name:"Siddhartha Dixit",         course:"BBA",                   company:"HDFC Bank",                         salary:450000},
+        {no:278, name:"Nitika Kushwaha",          course:"B.Com.(Hons.)",         company:"Axis Bank",                         salary:400000},
+        {no:279, name:"Vanshika Shukla",          course:"BBA",                   company:"Axis Bank",                         salary:400000},
+        {no:280, name:"Kartikey Gupta",           course:"B.A.",                  company:"Pragyavani Solutions",              salary:200000},
+        {no:281, name:"Rishikesh Ojha",           course:"Other",                 company:"Pragyavani Solutions",              salary:200000},
+        {no:282, name:"Deepak Mishra",            course:"BCA",                   company:"Pragyavani Solutions",              salary:200000},
+        {no:283, name:"Simran Bhumbla",           course:"B.Voc.(B&F)",          company:"Chryseus Hathway Investments",      salary:300000},
+        {no:284, name:"Geetika Arjel",            course:"BCA",                   company:"Chryseus Hathway Investments",      salary:300000},
+        {no:285, name:"Muskan Pandey",            course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:286, name:"Harsh Mishra",             course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:287, name:"Sadhvi Arora",             course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:288, name:"Anushka Shukla",           course:"B.Voc.(B&F)",          company:"Chryseus Hathway Investments",      salary:300000},
+        {no:289, name:"Varun Agarwal",            course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:290, name:"Yashi Singh",              course:"B.Com.(Hons.)",         company:"Chryseus Hathway Investments",      salary:300000},
+        {no:291, name:"Harsh Agarwal",            course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:292, name:"Rishabh Arora",            course:"B.Voc.(B&F)",          company:"Chryseus Hathway Investments",      salary:300000},
+        {no:293, name:"Pratham Sharma",           course:"B.Com.",                company:"Chryseus Hathway Investments",      salary:300000},
+        {no:294, name:"Divyanshu Singh",          course:"BBA",                   company:"Chryseus Hathway Investments",      salary:300000},
+        {no:295, name:"Sarthak Agarwal",          course:"B.Com.(Hons.)",         company:"Disha Placement Services",          salary:240000},
+        {no:296, name:"Geetika Arjel",            course:"BCA",                   company:"Disha Placement Services",          salary:240000},
+        {no:297, name:"Satakshi Mishra",          course:"B.Com.(Hons.)",         company:"Disha Placement Services",          salary:240000},
+        {no:298, name:"Shristi Singh",            course:"B.A.",                  company:"Disha Placement Services",          salary:240000},
+        {no:299, name:"Vanshika Shukla",          course:"BBA",                   company:"Disha Placement Services",          salary:240000},
+        {no:300, name:"Lavish Gupta",             course:"BBA",                   company:"Disha Placement Services",          salary:240000},
+        {no:301, name:"Aadesh Gupta",             course:"M.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:302, name:"Anant Singh",              course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:303, name:"Vanshita Rastogi",         course:"BAJMC",                 company:"Guruji Times",                      salary:240000},
+        {no:304, name:"Ayushi Singh",             course:"BAJMC",                 company:"Guruji Times",                      salary:240000},
+        {no:305, name:"Alok Mishra",              course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:306, name:"Sagar Tekwani",            course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:307, name:"Aastha Mishra",            course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:308, name:"Khushi Pandey",            course:"B.Com.",                company:"Guruji Times",                      salary:240000},
+        {no:309, name:"Faisal Ahmad",             course:"BAJMC",                 company:"Guruji Times",                      salary:240000},
+        {no:310, name:"Bhawana Shah",             course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:311, name:"Raghav Singh",             course:"B.Sc.",                 company:"Guruji Times",                      salary:240000},
+        {no:312, name:"Sonakshi Mishra",          course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:313, name:"Kashish Siddiqui",         course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:314, name:"Qayamaat Shabana",         course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:315, name:"Sandali Dwivedi",          course:"Other",                 company:"Guruji Times",                      salary:240000},
+        {no:316, name:"Harsh Tripathi",           course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:317, name:"Uday Singh",               course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:318, name:"Mirza Saad Beg",           course:"BCA",                   company:"Guruji Times",                      salary:240000},
+        {no:319, name:"Satyendra Singh",          course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:320, name:"Vaibhav Rai",              course:"B.A.",                  company:"Guruji Times",                      salary:240000},
+        {no:321, name:"Dhruv Singh Negi",         course:"B.Sc.",                 company:"Guruji Times",                      salary:240000},
+        {no:322, name:"Alok Dixit",               course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:323, name:"Akshat Mittal",            course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:324, name:"Namrata Dubey",            course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+        {no:325, name:"Rishabh Gupta",            course:"BCA",                   company:"Guruji Times",                      salary:240000},
+        {no:326, name:"Ankita Pathak",            course:"B.Voc.(SDEG)",         company:"Guruji Times",                      salary:240000},
+    ];
+
+    /* ─── Course key mapping ─── */
+    const courseKey = c => {
+        if (c === 'B.Com.')        return 'bcom';
+        if (c === 'B.Com.(Hons.)') return 'bcomh';
+        if (c === 'BCA')           return 'bca';
+        if (c === 'BBA')           return 'bba';
+        if (c.startsWith('B.Voc.')) return 'bvoc';
+        return 'others'; /* M.Com., B.A., B.Sc., M.A., M.Sc., M.Voc., BAJMC, Other */
+    };
+
+    const courseBadgeCls = c => ({
+        bcom:'cb-bcom', bcomh:'cb-bcomh', bca:'cb-bca',
+        bba:'cb-bba', bvoc:'cb-bvoc', others:'cb-others'
+    })[courseKey(c)];
+
+    const formatSal = v => {
+        if (v >= 100000) return (v/100000).toFixed(2).replace(/\.00$/,'') + ' LPA';
+        return '₹' + v.toLocaleString('en-IN');
+    };
+
+    const salCls = v => {
+        if (v >= 500000) return 'sal-high';
+        if (v >= 400000) return 'sal-mid';
+        if (v >= 250000) return 'sal-std';
+        return 'sal-entry';
+    };
+
+    /* ─── Company grid ─── */
+    const cmpMap = {};
+    placements.forEach(p => { cmpMap[p.company] = (cmpMap[p.company]||0)+1; });
+    const sortedCmp = Object.entries(cmpMap).sort((a,b)=>b[1]-a[1]);
+    document.getElementById('companyGrid').innerHTML = sortedCmp.map(([name,cnt]) => `
+        <div class="cmp-card">
+            <div class="cmp-count">${cnt}</div>
+            <div class="cmp-name">${name}</div>
+            <div class="cmp-label">student${cnt>1?'s':''} placed</div>
+        </div>`).join('');
+
+    /* ─── Course filter buttons ─── */
+    const courses = [
+        {k:'all',    t:'All'},
+        {k:'bcom',   t:'B.Com.'},
+        {k:'bcomh',  t:'B.Com. (Hons.)'},
+        {k:'bca',    t:'BCA'},
+        {k:'bba',    t:'BBA'},
+        {k:'bvoc',   t:'B.Voc.'},
+        {k:'others', t:'PG / Others'},
+    ];
+    const cf = document.getElementById('courseFilters');
+    courses.forEach(c => {
+        const b = document.createElement('button');
+        b.className = 'cf-btn' + (c.k==='all'?' on':'');
+        b.dataset.k = c.k; b.textContent = c.t;
+        cf.appendChild(b);
+    });
+
+    /* ─── State ─── */
+    let activeCourse = 'all';
+    let searchQ = '';
+    let sortCol = null;
+    let sortDir = 1;
+
+    function getFiltered() {
+        return placements.filter(p => {
+            const cMatch = activeCourse === 'all' || courseKey(p.course) === activeCourse;
+            const q = searchQ.toLowerCase();
+            const sMatch = !q ||
+                p.name.toLowerCase().includes(q) ||
+                p.company.toLowerCase().includes(q) ||
+                p.course.toLowerCase().includes(q);
+            return cMatch && sMatch;
+        });
+    }
+
+    function renderTable() {
+        let data = getFiltered();
+        if (sortCol) {
+            data = [...data].sort((a,b) => {
+                let av = a[sortCol], bv = b[sortCol];
+                if (typeof av === 'string') av = av.toLowerCase();
+                if (typeof bv === 'string') bv = bv.toLowerCase();
+                return av < bv ? -sortDir : av > bv ? sortDir : 0;
+            });
+        }
+        const cnt = document.getElementById('resCount');
+        cnt.innerHTML = `Showing <strong>${data.length}</strong> of <strong>${placements.length}</strong> records`;
+
+        const tbody = document.getElementById('resultsTbody');
+        if (!data.length) {
+            tbody.innerHTML = `<tr><td colspan="5"><div class="no-results">
+                <i class="fa-solid fa-magnifying-glass"></i>No records found</div></td></tr>`;
+            return;
+        }
+        tbody.innerHTML = data.map((p,i) => `
+            <tr>
+                <td class="td-sno">${i+1}</td>
+                <td class="td-name">${p.name}</td>
+                <td class="td-course"><span class="cbadge ${courseBadgeCls(p.course)}">${p.course}</span></td>
+                <td class="td-company">${p.company}</td>
+                <td class="td-salary"><span class="sal-badge ${salCls(p.salary)}">${formatSal(p.salary)}</span></td>
+            </tr>`).join('');
+    }
+
+    /* ─── Events ─── */
+    cf.addEventListener('click', e => {
+        const b = e.target.closest('.cf-btn');
+        if (!b) return;
+        document.querySelectorAll('.cf-btn').forEach(x => x.classList.remove('on'));
+        b.classList.add('on');
+        activeCourse = b.dataset.k;
+        renderTable();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+        searchQ = e.target.value;
+        renderTable();
+    });
+
+    document.querySelectorAll('.rtbl thead th[data-col]').forEach(th => {
+        th.addEventListener('click', () => {
+            const col = th.dataset.col;
+            if (sortCol === col) { sortDir *= -1; }
+            else { sortCol = col; sortDir = 1; }
+            document.querySelectorAll('.rtbl thead th').forEach(t => t.classList.remove('sorted'));
+            th.classList.add('sorted');
+            const icon = th.querySelector('.sort-icon');
+            if (icon) icon.className = `fa-solid ${sortDir===1?'fa-sort-up':'fa-sort-down'} sort-icon`;
+            renderTable();
+        });
+    });
+
+    /* ─── Scroll reveal ─── */
+    const obs = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+    renderTable();
+    </script>
+    <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+*{
+    font-family: Arial, sans-serif;
+}
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background: url('../images/about/accreditations.jpg') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to right,
+    rgba(69, 10, 10, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(69, 10, 10, 0.8) 100%
+  );
+    z-index: 1;
+}
+
+.z-3 { z-index: 3 !important; }
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71844 100%) !important;
+    border-color: #a71836;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4);
+}
+
+/* Main Global Headings (Shared with thecollege.css) */
+.overview-header {
+    margin-bottom: 60px;
+}
+
+.sub-heading {
+    display: block;
+    color: #a71836;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 3rem;
+    color: #a71836;
+    font-weight: 800;
+    margin: 0;
+}
+
+.heading-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #a71836, #a71836);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* Vision & Mission Section */
+.vm-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+
+.vm-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.vm-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 60px rgba(167, 24, 54, 0.1);
+}
+
+.vm-card-inner {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.vm-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #a71836;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(167, 24, 54, 0.2);
+}
+
+.vm-content h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.motto-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(167, 24, 54, 0.1);
+    color: #a71836;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.vm-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Core Values Section */
+.core-values-section {
+    padding: 100px 0;
+    background: #fdfdfd;
+}
+
+.core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.core-value-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.core-value-card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: #a71836;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cv-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(167, 24, 54, 0.1);
+    color: #a71836;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 20px;
+}
+
+.core-value-card h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.core-value-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Animations Trigger */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    }
+
+    .vm-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: clamp(1.8rem, 9vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .vm-card-inner {
+        padding: 30px;
+    }
+    
+    .vm-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .vm-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .vm-content p {
+        font-size: 1rem;
+    }
+}
+
+

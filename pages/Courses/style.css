@@ -1,0 +1,403 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #f7f7f7;
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background: url('../assets/course.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to right,
+    rgba(69, 10, 10, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(69, 10, 10, 0.8) 100%
+  );
+    z-index: 1;
+}
+
+.z-3 { z-index: 3 !important; }
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff!important;
+    border: 2px solid rgba(255, 255, 255, 0.8)!important;
+    transition: all 0.4s ease-in-out!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71844 100%) !important;
+    border-color: #a71836 !important;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(230, 74, 25, 0.4)!important;
+}
+
+
+/* ===============================
+   DETAILS GRID
+================================ */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* ===============================
+   INFO BOXES
+================================ */
+.box {
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* hover lift */
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   DYNAMIC MULTI-COLOR THEMES
+================================ */
+
+/* 1. Crimson - Duration */
+.details-grid .box:nth-child(1) { --box-theme: #a71836; }
+/* 2. Royal Blue - Level */
+.details-grid .box:nth-child(2) { --box-theme: #6b8bcf; }
+/* 3. Teal - Medium */
+.details-grid .box:nth-child(3) { --box-theme: #0cb946; }
+/* 4. Indigo - Seats */
+.details-grid .box:nth-child(4) { --box-theme: #be7200; }
+/* 5. Emerald - Eligibility */
+.details-grid .box:nth-child(5) { --box-theme: #b6009e; }
+/* 6. Violet - Syllabus */
+.details-grid .box:nth-child(6) { --box-theme: #004625; }
+
+/* Apply Theme to Components */
+.details-grid .box {
+    border-left: 4px solid var(--box-theme) !important;
+}
+
+.details-grid .box::before {
+    background: var(--box-theme) !important;
+}
+
+.details-grid .box .icon {
+    background: color-mix(in srgb, var(--box-theme) 12%, transparent) !important;
+    color: var(--box-theme) !important;
+}
+
+/* Specific styling for the last box download button */
+.details-grid .box:last-child .download-btn {
+    background-color: color-mix(in srgb, var(--box-theme) 12%, transparent);
+    color: var(--box-theme);
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--box-theme) 30%, transparent);
+}
+
+.details-grid .box:last-child .download-btn:hover {
+    background-color: var(--box-theme);
+    color: #fff;
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--box-theme) 60%, transparent);
+}
+
+/* Full width box */
+.full {
+    grid-column: span 2;
+}
+
+/* ===============================
+   DESCRIPTION TEXT
+================================ */
+.description {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* ===============================
+   SCROLL REVEAL ANIMATIONS
+================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .con {
+        padding-left: 20px;
+        background-attachment: scroll;
+    }
+
+    .intro-section {
+        bottom: 50px;
+    }
+
+    .intro-section .heading {
+        font-size: 36px;
+    }
+
+    .intro-section .description {
+        font-size: 15px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: span 1;
+    }
+
+    .program-details h1 {
+        font-size: 28px;
+    }
+}
+
+/* ===============================
+   BOX ICON STYLING
+================================ */
+.box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+
+    align-items: start;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover */
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.14);
+}
+/* ===============================
+   SMOOTH ICON ANIMATION (FIXED)
+================================ */
+
+/* Base icon state */
+.box .icon {
+    grid-row: span 2;
+    height: 38px;
+    width: 38px;
+    border-radius: 10px;
+
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Scroll reveal */
+.reveal.active .icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.box p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151;
+}
+
+
+
+/* Icon styles are now handled by dynamic themes above */
+
+/* ===============================
+   HOVER — SUBTLE & SMOOTH
+================================ */
+.box:hover .icon {
+    transform: translateY(-2px) scale(1.08);
+}
+
+
+/* Icon entrance animation (scroll-based) */
+.reveal.active .icon {
+    animation: iconPop 0.6s ease;
+}
+
+.download-btn {
+  margin-top: 12px;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  max-width: fit-content;
+}
+.box.reveal .download-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.box.reveal.active .download-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   MOBILE IMPROVEMENTS
+   ========================= */
+@media (max-width: 576px) {
+
+    /* Hero Section */
+    .hero-section {
+        padding: 90px 15px 60px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: clamp(1.8rem, 9vw, 4rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -1px;
+        margin-bottom: 15px;
+    }
+
+    .main-description {
+        font-size: 0.75rem!important;
+        line-height: 1.6;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+     /* HERO BUTTON WRAPPER */
+    .hero-section .d-flex {
+        flex-direction: column;
+        gap: 12px !important;
+        padding: 0 12px;
+    }
+
+    /* HERO BUTTONS */
+    .hero-section .btn-menu {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 14px 0;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .btn-menu {
+        padding: 12px 28px!important;
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,141 @@
+<style>
+  #footer-placeholder footer {
+    background: linear-gradient(90deg, #000000 0%, #8b1a2c 50%, #000000 100% );
+    color: white;
+    padding: 50px 20px 20px;
+  }
+
+  #footer-placeholder .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #footer-placeholder .footer-container {
+      grid-template-columns: auto auto;
+      gap: 20px;
+    }
+  }
+
+  #footer-placeholder .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  #footer-placeholder .footer-section p {
+    opacity: 0.9;
+    line-height: 1.8;
+  }
+
+  #footer-placeholder .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #footer-placeholder .footer-section li {
+    margin-bottom: 10px;
+  }
+
+  #footer-placeholder .footer-section a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  #footer-placeholder .footer-section a:hover {
+    opacity: 1;
+  }
+
+  #footer-placeholder .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  #footer-placeholder .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #footer-placeholder .social-links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  #footer-placeholder .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.233);
+    padding-top: 20px;
+    text-align: center;
+    opacity: 0.9;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media(max-width: 425px) {
+    #footer-placeholder .footer-container {
+      grid-template-columns: auto;
+      gap:20px;
+    }
+  }
+</style>
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About NPGC</h4>
+        <p>
+          National P.G. College<br>
+          2, Rana Pratap Marg<br>
+          Lucknow 226001, India
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="#">University of Lucknow</a></li>
+          <li><a href="#">Ministry of Education</a></li>
+          <li><a href="#">UGC</a></li>
+          <li><a href="#">NAAC</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Contact</h4>
+        <p>
+          Phone: +91 522 4021304<br>
+          Email: support@npgc.in
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Our Location</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.5!2d80.9409029!3d26.8567355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd0a819131cb:0x11553d04f3a32d9c!2sNational%20Post%20Graduate%20College!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin" width="100%" height="100" style="border: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/npgcin" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@npgcin14" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://instagram.com/npgcin" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 National P.G. College. All Rights Reserved.</p>
+    </div>
+  </footer>

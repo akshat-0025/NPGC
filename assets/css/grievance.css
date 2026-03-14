@@ -1,0 +1,278 @@
+:root {
+    --primary: #a71836;
+    --primary-hover: #8e142d;
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 40px rgba(167, 24, 54, 0.12);
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background: url('/NavSections/StudentGrievance/assets/grievance_hero.jpg') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(69, 10, 10, 0.8) 0%,
+        rgba(0, 0, 0, 0.75) 40%,
+        rgba(69, 10, 10, 0.8) 100%
+    );
+    z-index: 1;
+}
+
+.z-3 { z-index: 3 !important; }
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 6px;
+    transition: all 0.4s var(--transition) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #A71836 0%, #A71836 100%) !important;
+    border-color: #A71836 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   ANNUAL REPORTS SECTION
+   ========================= */
+.annual-reports-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.sub-heading {
+    display: block;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.main-heading {
+    font-size: 3rem;
+    color: var(--text-dark);
+    font-weight: 800;
+    margin: 0;
+}
+
+.heading-line {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* Reports Grid */
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* Premium Report Card */
+.report-card {
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    transition: all 0.5s var(--transition);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+.report-card-inner {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.report-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(167, 24, 54, 0.1);
+}
+
+.report-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(167, 24, 54, 0.08);
+    color: var(--primary);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.report-card:hover .report-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: rotateY(10deg);
+}
+
+.report-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--bg-light);
+    color: var(--primary);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.report-info h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.report-info p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.report-action {
+    margin-top: auto;
+}
+
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.btn-view:hover {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(167, 24, 54, 0.2);
+}
+
+/* Animations Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   MOBILE IMPROVEMENTS
+   ========================= */
+@media (max-width: 768px) {
+    .main-heading { font-size: 2.2rem; }
+    .reports-grid { gap: 20px; }
+    .report-card-inner { padding: 30px; }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 90px 15px 60px;
+        min-height: auto;
+    }
+
+    .main-title {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+
+    .main-description {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width:425px){
+    .hero-section{
+        padding:90px 15px 60px;
+        text-align:center;
+    }
+    .main-title{
+        font-size: clamp(1.7rem, 8vw, 2.5rem);
+        line-height: 1;
+        letter-spacing:-1px;
+    }
+    .main-description{
+        font-size:.95rem;
+    }
+    .btn-menu{
+        font-size:.95rem;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grievance | National PG College</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/grievance.css">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <header class="hero-section">
+        <div class="gradient-overlay-v"></div>
+
+        <div class="container text-center text-white position-relative z-3">
+            <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase shadow-sm reveal">
+                Justice • Support • Redressal
+            </span>
+
+            <h2 class="main-title fw-black text-uppercase mb-3 reveal">
+                Student<br>Grievance
+            </h2>
+
+            <p class="lead mx-auto mb-5 opacity-75 main-description reveal">
+                A transparent, efficient, and fair mechanism to address student concerns and ensure a supportive academic environment.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mb-5 pb-5 reveal">
+                <a href="#annual-reports-section-id" class="btn btn-menu btn-lg px-5 py-3 fw-bold">View Policy & Reports</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="annual-reports-section" id="annual-reports-section-id">
+        <div class="container">
+            <div class="section-top text-center mb-5 reveal">
+                <span class="sub-heading">Institutional Transparency</span>
+                <h2 class="main-heading">Annual Reports & Policies</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="reports-grid">
+
+                <div class="report-card reveal">
+                    <div class="report-card-inner">
+                        <div class="report-icon">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-tag">Statutory</span>
+                            <h3>POSH Act</h3>
+                            <p>Internal Complaints Committee (ICC) guidelines and policy against sexual harassment at the workplace.</p>
+                        </div>
+                        <div class="report-action">
+                            <a href="#" class="btn-view" target="_blank">
+                                View / Download <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-card reveal">
+                    <div class="report-card-inner">
+                        <div class="report-icon">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-tag">Regulatory</span>
+                            <h3>Anti-Ragging Regulations</h3>
+                            <p>UGC regulations and college policy to maintain a ragging-free campus and student safety.</p>
+                        </div>
+                        <div class="report-action">
+                            <a href="#" class="btn-view" target="_blank">
+                                View / Download <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-card reveal">
+                    <div class="report-card-inner">
+                        <div class="report-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-tag">Online Portal</span>
+                            <h3>Anti-Ragging Portal</h3>
+                            <p>Direct link to the national anti-ragging portal for reporting grievances and checking status.</p>
+                        </div>
+                        <div class="report-action">
+                            <a href="#" class="btn-view" target="_blank">
+                                Click here <i class="fa-solid fa-external-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/loadcomponents.js"></script>
+    <script>
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

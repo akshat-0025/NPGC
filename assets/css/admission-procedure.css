@@ -1,0 +1,302 @@
+:root {
+    --primary: #a71836;
+    --primary-hover: #8e142d;
+    --bg-light: #f8f9fa;
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--text-dark);
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px;
+    background: url('/NavSections/Admissions/assets/examination_assessment.jpeg') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(69, 10, 10, 0.8) 0%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(69, 10, 10, 0.8) 100%);
+    z-index: 1;
+}
+
+.z-3 {
+    z-index: 3 !important;
+}
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71836 100%) !important;
+    border-color: #a71836 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CONTENT SECTIONS
+   ========================= */
+.admission-content {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.section-wrapper {
+    margin-bottom: 80px;
+}
+
+.section-header {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 20px rgba(167, 24, 54, 0.2);
+    flex-shrink: 0;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* List Cards */
+.list-card {
+    background: #fff;
+    padding: 25px 30px 25px 80px;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: all 0.4s var(--transition);
+}
+
+.list-card:hover {
+    transform: translateX(10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(167, 24, 54, 0.08);
+}
+
+.list-card .badge {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: var(--bg-light);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    border: 2px solid var(--primary);
+}
+
+.list-card:hover .badge {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.list-card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.list-card li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+/* Success Cards */
+.success-card {
+    background: #fdf2f4;
+    padding: 24px 30px;
+    border-radius: 15px;
+    border-left: 5px solid var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.success-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(167, 24, 54, 0.1);
+}
+
+.success-card i {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+/* Danger Cards */
+.danger-card {
+    background: #f8f9fa;
+    padding: 24px 30px;
+    border-radius: 15px;
+    border-left: 5px solid #333;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.danger-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-left-color: var(--primary);
+}
+
+.danger-card i {
+    color: #cc0000;
+    margin-right: 10px;
+}
+
+.danger-card ul {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .container {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .list-card {
+        padding-left: 30px;
+    }
+    .list-card .badge {
+        position: static;
+        transform: none;
+        margin-bottom: 15px;
+    }
+    .list-card:hover .badge {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 90px 15px 60px;
+        text-align: center;
+    }
+    .main-title {
+        font-size: 2.8rem;
+    }
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:425px){
+    .hero-section{
+        padding:90px 15px 60px;
+        text-align:center;
+    }
+    .main-title{
+        font-size: clamp(1.7rem, 8vw, 2.5rem);
+        line-height: 1;
+        letter-spacing:-1px;
+    }
+    .main-description{
+        font-size:.95rem;
+    }
+    .btn-menu{
+        font-size:.75rem;
+    }
+}

@@ -1,0 +1,566 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background: url('../images/about/accreditations.jpg') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(69, 10, 10, 0.8) 0%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(69, 10, 10, 0.8) 100%);
+    z-index: 1;
+}
+
+.z-3 {
+    z-index: 3 !important;
+}
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71844 100%) !important;
+    border-color: #a71836;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4);
+}
+
+/* College Overview Section */
+.college-overview-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sub-heading {
+    display: block;
+    color: #a71836;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 3rem;
+    color: #a71836;
+    font-weight: 800;
+    margin: 0;
+}
+
+.heading-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #a71836, #a71836);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.overview-main-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.highlight-p {
+    font-size: 1.25rem !important;
+    color: #1a1a1a !important;
+    font-weight: 500;
+    border-left: 5px solid #a71836;
+    padding-left: 20px;
+}
+
+.text-accent {
+    color: #a71836;
+    margin-right: 10px;
+}
+
+.badge-accent {
+    background: rgba(167, 24, 54, 0.1);
+    color: #a71836;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.overview-features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-right: 4px solid transparent;
+}
+
+.feature-item:hover {
+    transform: translateX(-10px);
+    border-right-color: #a71836;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: #a71836;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-text h4 {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.feature-text p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.overview-extra-text {
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+    margin-top: 40px;
+}
+
+.overview-extra-text p {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsiveness for Overview */
+@media (max-width: 992px) {
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+}
+
+/* Timeline Section */
+.college-timeline-section {
+    padding: 100px 0;
+    background: #fdfdfd;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding: 20px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(167, 24, 54, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #a71836;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(167, 24, 54, 0.1);
+    z-index: 2;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    font-weight: 800;
+    color: #a71836;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    width: 45%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.4s ease;
+    border-top: 4px solid #a71836;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(167, 24, 54, 0.1);
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(167, 24, 54, 0.1);
+    color: #a71836;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Connectors */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    height: 2px;
+    background: rgba(167, 24, 54, 0.2);
+}
+
+.timeline-item.right .timeline-content::before {
+    left: -20px;
+}
+
+.timeline-item.left .timeline-content::before {
+    right: -20px;
+}
+
+/* Animations Trigger */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline Responsiveness */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start !important;
+        padding-left: 60px;
+        margin-bottom: 50px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-date {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+}
+
+
+/* Stats Section */
+.college-stats-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background: #f8f8f8;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    background: #A71836;
+    color: white;
+    transform: translateY(-10px);
+}
+
+.stat-card i {
+    font-size: 35px;
+    color: #A71836;
+    margin-bottom: 10px;
+}
+
+.stat-card:hover i {
+    color: white;
+}
+
+.stat-card h3 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    }
+}
+/* Secondary Navigation Responsive */
+.secondary-nav-section {
+    background: #f8f8f8;
+    padding: 15px 0;
+}
+
+.nav-strip-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-strip-btn {
+    padding: 8px 18px;
+    background: white;
+    border-radius: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-strip-btn.active,
+.nav-strip-btn:hover {
+    background: #A71836;
+    color: white;
+    border-color: #A71836;
+}
+/* =========================
+   TABLET RESPONSIVE
+   ========================= */
+@media (max-width: 992px) {
+
+    .hero-section {
+        padding: 100px 20px 70px;
+        min-height: auto;
+    }
+
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    }
+
+    .college-overview-section {
+        padding: 70px 20px;
+    }
+
+    .overview-header {
+        margin-bottom: 40px;
+    }
+
+    .main-heading {
+        font-size: 2.2rem;
+    }
+
+    .overview-main-text p {
+        font-size: 1rem;
+    }
+}
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+@media (max-width: 576px) {
+
+    /* Hero */
+    .hero-section {
+        padding: 90px 15px 60px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: clamp(1.8rem, 9vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .main-description {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .hero-section .d-flex {
+        flex-direction: column;
+        gap: 12px !important;
+    }
+
+    .btn-menu {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 12px 0 !important;
+        font-size: 0.85rem;
+    }
+
+    /* Overview */
+    .highlight-p {
+        font-size: 1rem !important;
+        padding-left: 15px;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .feature-item:hover {
+        transform: none;
+    }
+
+    .feature-icon {
+        margin-bottom: 10px;
+    }
+
+    /* Stats */
+    .college-stats-section {
+        padding: 50px 15px;
+    }
+
+    .stat-card {
+        padding: 25px 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 22px;
+    }
+}

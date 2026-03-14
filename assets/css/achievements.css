@@ -1,0 +1,318 @@
+*{
+    font-family: Arial, sans-serif;
+}
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background: url('../images/about/accreditations.jpg') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to right,
+    rgba(69, 10, 10, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(69, 10, 10, 0.8) 100%
+  );
+    z-index: 1;
+}
+
+.z-3 { z-index: 3 !important; }
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 40%, #ff5252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71844 0%, #a71836 100%) !important;
+    border-color:#a71844;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(230, 74, 25, 0.4);
+}
+
+/* Achievements Cards */
+.achievement-list-section {
+    padding: 50px;
+    background: white;
+    text-align: justify;
+}
+/*fr = fraction of available space*/
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievement-box {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: 0.3s ease;
+    border-left: 6px solid #A71836;
+}
+
+.achievement-box i {
+    font-size: 28px;
+    color: #A71836;
+    margin-top: 4px;
+}
+
+.achievement-box p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hover Effect */
+.achievement-box:hover {
+    transform: translateY(-10px);
+    background: #A71836;
+}
+
+.achievement-box:hover p,
+.achievement-box:hover i {
+    color: white;
+}
+
+/* Timeline Section */
+.achievement-timeline {
+    padding: 50px;
+    background: #f8f8f8;
+}
+
+.achievement-timeline h2 {
+    text-align: center;
+    color: #A71836;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #A71836, #a71844);
+    border-radius: 4px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 20px;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 4px solid #A71836;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(167, 24, 54, 0.2);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.timeline-item:hover::before {
+    background: #A71836;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(167, 24, 54, 0.3);
+}
+
+.timeline-item span {
+    display: inline-block;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #A71836, #a71844);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(167, 24, 54, 0.3);
+}
+
+.timeline-item p {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #A71836;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-size: 1.05rem;
+    color: #4a5565;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover p {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: white;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* resonsive for tablet and mobile in where in tablet 2 column and in mobile one column will appear*/
+@media (max-width: 900px) {
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Responsive */
+@media (max-width: 1400px) {
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    }
+}
+/* =========================
+   MOBILE IMPROVEMENTS
+   ========================= */
+@media (max-width: 576px) {
+
+    /* Hero Section */
+    .hero-section {
+        padding: 90px 15px 60px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: clamp(1.8rem, 9vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+
+    .main-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    
+     /* HERO BUTTON WRAPPER */
+    .hero-section .d-flex {
+        flex-direction: column;
+        gap: 12px !important;
+        padding: 0 12px;
+    }
+
+    .btn-menu {
+        padding: 12px 28px!important;
+        font-size: 0.75rem;
+    }
+
+    /* HERO BUTTONS */
+    .hero-section .btn-menu {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 14px 0;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* Secondary Nav */
+    .nav-strip-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-strip-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Achievement List Section */
+    .achievement-list-section {
+        padding: 30px 15px;
+    }
+
+    /* Timeline Section */
+    .achievement-timeline {
+        padding: 30px 15px;
+    }
+    
+    .timeline {
+        padding-left: 15px;
+    }
+    
+    .timeline-item::before {
+        left: -23px;
+    }
+}

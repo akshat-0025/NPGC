@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Results 2023–24 – NPGC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/placement.css">
+    <link rel="stylesheet" href="../assets/css/placement-2024.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- ── HERO (same structure as placement.html) ── -->
+    <header class="hero-section">
+        <div class="gradient-overlay-v"></div>
+        <div class="container text-center text-white position-relative z-3">
+            <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase">
+                Placement Results
+            </span>
+            <h2 class="main-title fw-black text-uppercase mb-3">
+                Results<br>2023–24
+            </h2>
+            <p class="lead mx-auto mb-5 opacity-75 main-description">
+                Student Placement Results for the Academic Year 2023–24 —
+                National Post Graduate College, Lucknow.
+            </p>
+            <div class="d-flex justify-content-center gap-3 mb-5 pb-5">
+                <a href="#results" class="btn btn-menu btn-lg px-5 py-3 fw-bold">View Results</a>
+            </div>
+            <div class="row g-4 mt-5 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">107</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Students Placed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">6 LPA</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Top Package</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">15+</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Companies</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <h3 class="display-5 fw-bold mb-0">4</h3>
+                        <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Courses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── PAGE INTRO + STAT STRIP ── -->
+    <section class="pr-hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="pr-year-badge">Academic Year 2023 – 24</div>
+                    <h1 class="pr-title">Student<br>Placement <span>Results</span></h1>
+                    <p class="pr-sub">
+                        107 students from B.Com, B.Com (Hons.), BCA and BBA programmes
+                        were successfully placed with leading companies across India,
+                        with packages ranging from ₹1.68 LPA to ₹6.00 LPA.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stat-strip">
+                        <div class="ss-item">
+                            <div class="ss-num">107</div>
+                            <div class="ss-lbl">Total Placed</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num"><span>6</span> LPA</div>
+                            <div class="ss-lbl">Highest Package</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num">15<span>+</span></div>
+                            <div class="ss-lbl">Recruiters</div>
+                        </div>
+                        <div class="ss-item">
+                            <div class="ss-num">4</div>
+                            <div class="ss-lbl">Programmes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COMPANIES ── -->
+    <section class="companies-sec">
+        <div class="container">
+            <div class="row align-items-end mb-2">
+                <div class="col">
+                    <span class="sec-label">Hiring Partners</span>
+                    <h2 class="sec-h mt-2">Recruiting <span class="acc">Companies</span></h2>
+                    <div class="stripe"></div>
+                </div>
+            </div>
+            <div class="company-grid" id="companyGrid"></div>
+        </div>
+    </section>
+
+    <!-- ── RESULTS TABLE ── -->
+    <section class="results-sec" id="results">
+        <div class="container">
+            <div class="row align-items-end mb-4">
+                <div class="col-lg-6">
+                    <span class="sec-label">Full Data</span>
+                    <h2 class="sec-h mt-2">Placement <span class="acc">Records</span></h2>
+                    <div class="stripe"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="course-filters" id="courseFilters"></div>
+                <div class="search-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search name, company…">
+                </div>
+            </div>
+
+            <div class="res-count" id="resCount"></div>
+
+            <div class="results-tbl-wrap">
+                <table class="rtbl">
+                    <thead>
+                        <tr>
+                            <th class="td-sno">#</th>
+                            <th data-col="name">Name <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="course">Course <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="company">Company <i class="fa-solid fa-sort sort-icon"></i></th>
+                            <th data-col="salary">Package <i class="fa-solid fa-sort sort-icon"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── BACK LINK ── -->
+    <section class="back-sec">
+        <div class="container text-center">
+            <a href="../pages/placement-2025.html" class="btn-rd me-3">
+                <i class="fa-solid fa-arrow-right"></i>View 2024–25 Results
+            </a>
+            <a href="../pages/placement.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>Back to Placement Cell
+            </a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    /* ════════════════════════════════════
+       DATA
+    ════════════════════════════════════ */
+    const placements = [
+        {no:1,  name:"Anchal Singh",          course:"B.Com.",       company:"Techdockx Lab",                    salary:500000},
+        {no:2,  name:"Ayushi Anand",           course:"B.Com.",       company:"Techdockx Lab",                    salary:400000},
+        {no:3,  name:"Lawangi Bhardwaj",       course:"B.Com.",       company:"Wipro",                            salary:308000},
+        {no:4,  name:"Diksha Gupta",           course:"B.Com.",       company:"Techdockx Lab",                    salary:300000},
+        {no:5,  name:"Archa Srivastava",       course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:6,  name:"Sneha Dwivedi",          course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:7,  name:"Kashish Nigam",          course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:8,  name:"Mitali Srivastava",      course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:9,  name:"Sakshi Yadav",           course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:10, name:"Arpita Awasthi",         course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:11, name:"Ishita Pandey",          course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:12, name:"Mariya Yadav",           course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:13, name:"Harsh Mishra",           course:"B.Com.",       company:"AIM Group",                        salary:300000},
+        {no:14, name:"Aditya Chauhan",         course:"B.Com.",       company:"Mbrosia Nature Living",            salary:264000},
+        {no:15, name:"Ishita Pandey",          course:"B.Com.",       company:"India First Life Insurance",       salary:250000},
+        {no:16, name:"Aradhana Gupta",         course:"B.Com.",       company:"India First Life Insurance",       salary:250000},
+        {no:17, name:"Lavangi Bhardwaj",       course:"B.Com.",       company:"V Beyond",                         salary:250000},
+        {no:18, name:"Shrey Agarwal",          course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:19, name:"Rashika Jain",           course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:20, name:"Muskan Arora",           course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:21, name:"Lavanya Gupta",          course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:22, name:"Shubhangini Agrawal",    course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:23, name:"Rimjhim",                course:"B.Com.",       company:"Insplore Consultancy",             salary:180000},
+        {no:24, name:"Shantanu Srivastava",    course:"B.Com.(Hons.)",company:"Wipro",                            salary:308000},
+        {no:25, name:"Tina Bhalla",            course:"B.Com.(Hons.)",company:"AIM Group",                        salary:300000},
+        {no:26, name:"Devansh Jain",           course:"B.Com.(Hons.)",company:"AIM Group",                        salary:300000},
+        {no:27, name:"Utkarsh Gupta",          course:"B.Com.(Hons.)",company:"AIM Group",                        salary:300000},
+        {no:28, name:"Nandita",                course:"B.Com.(Hons.)",company:"AIM Group",                        salary:300000},
+        {no:29, name:"Ananya Agarwal",         course:"B.Com.(Hons.)",company:"AIM Group",                        salary:300000},
+        {no:30, name:"Arnav Singh",            course:"B.Com.(Hons.)",company:"Agile Capital Services",           salary:300000},
+        {no:31, name:"Lavanya Gupta",          course:"B.Com.(Hons.)",company:"Agile Capital Services",           salary:300000},
+        {no:32, name:"Rachit Bansal",          course:"B.Com.(Hons.)",company:"Agile Capital Services",           salary:300000},
+        {no:33, name:"Shantanu Srivastava",    course:"B.Com.(Hons.)",company:"India First Life Insurance",       salary:250000},
+        {no:34, name:"Tanisha Mandhyan",       course:"B.Com.(Hons.)",company:"India First Life Insurance",       salary:250000},
+        {no:35, name:"Anjali Tiwari",          course:"B.Com.(Hons.)",company:"India First Life Insurance",       salary:250000},
+        {no:36, name:"Arnav Singh",            course:"B.Com.(Hons.)",company:"Insplore Consultancy",             salary:180000},
+        {no:37, name:"Khushi Srivastava",      course:"B.Com.(Hons.)",company:"Insplore Consultancy",             salary:180000},
+        {no:38, name:"Harsha Sahani",          course:"B.C.A.",       company:"Techdockx Lab",                    salary:600000},
+        {no:39, name:"Mohammad Arham Faiz",    course:"B.C.A.",       company:"Xero Apps Private Limited",        salary:480000},
+        {no:40, name:"Afreen Siddiqui",        course:"B.C.A.",       company:"PwC",                              salary:330000},
+        {no:41, name:"Maalav Whorra",          course:"B.C.A.",       company:"AIM Group",                        salary:300000},
+        {no:42, name:"Anamika Dixit",          course:"B.C.A.",       company:"India First Life Insurance",       salary:250000},
+        {no:43, name:"Anamika Dixit",          course:"B.C.A.",       company:"IndiaFirst",                       salary:250000},
+        {no:44, name:"Afreen Siddiqui",        course:"B.C.A.",       company:"HCL Technologies",                 salary:240000},
+        {no:45, name:"Rahul Rikhari",          course:"B.C.A.",       company:"HCL Technologies",                 salary:240000},
+        {no:46, name:"Vaishnavi Shukla",       course:"B.C.A.",       company:"HCL Technologies",                 salary:240000},
+        {no:47, name:"Shruti Kashyap",         course:"B.C.A.",       company:"Amazon",                           salary:202000},
+        {no:48, name:"Shruti Kashyap",         course:"B.C.A.",       company:"Amazon",                           salary:202000},
+        {no:49, name:"Parul Rathaur",          course:"B.C.A.",       company:"Tata Consultancy Services",        salary:190000},
+        {no:50, name:"Divyanshu Singh",        course:"B.C.A.",       company:"Nepauto Solutions",                salary:120000},
+        {no:51, name:"Simanshi",               course:"B.C.A.",       company:"Indian Post Office",               salary:120000},
+        {no:52, name:"Afreen Siddiqui",        course:"B.C.A.",       company:"V Beyond",                         salary:300000},
+        {no:53, name:"Khushi Kishore",         course:"B.B.A.",       company:"PwC",                              salary:330000},
+        {no:54, name:"Shreya Agarwal",         course:"B.B.A.",       company:"PwC",                              salary:330000},
+        {no:55, name:"Rishita Shukla",         course:"B.B.A.",       company:"Wipro",                            salary:308000},
+        {no:56, name:"Satyam Nag",             course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:57, name:"Hansleen Kaur",          course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:58, name:"Bhavika Mahajan",        course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:59, name:"Akhya Patwa",            course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:60, name:"Aviral Sharma",          course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:61, name:"Sharad Singh",           course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:62, name:"Lavish Guha",            course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:63, name:"Vanshika Shukla",        course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:64, name:"Ujjwal Gupta",           course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:65, name:"Anushree",               course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:66, name:"Harshit Gupta",          course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:67, name:"Bhartendra Singh",       course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:68, name:"Sanskriti Choudhary",    course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:69, name:"Varun Prakash",          course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:70, name:"Kanchan Joshi",          course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:71, name:"Shubhi Jain",            course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:72, name:"Ekta Agarwal",           course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:73, name:"Shreya Sabberwal",       course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:74, name:"Suhani Gupta",           course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:75, name:"Sriyansh Tiwari",        course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:76, name:"Khushboo Kumari",        course:"B.B.A.",       company:"AIM Group",                        salary:300000},
+        {no:77, name:"Divyanshu Singh",        course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:78, name:"Drishti Gupta",          course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:79, name:"Aditya Rastogi",         course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:80, name:"Ekta Agarwal",           course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:81, name:"Maneesha Rastogi",       course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:82, name:"Khushi Chauhan",         course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:83, name:"Benisha Kharbanda",      course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:84, name:"Hemangi Srivastava",     course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:85, name:"Kajal Verma",            course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:86, name:"Sanidhya Raghuvanshi",   course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:87, name:"Sonakshi Gupta",         course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:88, name:"Tanvi Bansal",           course:"B.B.A.",       company:"Agile Capital Services",           salary:300000},
+        {no:89, name:"Shubh Srivastava",       course:"B.B.A.",       company:"India First Life Insurance",       salary:250000},
+        {no:90, name:"Khushi Sharma",          course:"B.B.A.",       company:"V Beyond",                         salary:250000},
+        {no:91, name:"Garima Agnihotri",       course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:92, name:"Anandika Srivastava",    course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:93, name:"Ekta Agarwal",           course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:94, name:"Sonakshi Gupta",         course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:95, name:"Vanshika Shukla",        course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:96, name:"Aditi Verma",            course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:97, name:"Lavish Guha",            course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:98, name:"Sara Zafar",             course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:99, name:"Ankita Singh",           course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:100,name:"Mahi Gupta",             course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:101,name:"Srishti Kapoor",         course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:102,name:"Gayatri Gupta",          course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:103,name:"Samridhi Gupta",         course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:104,name:"Astha Sinha",            course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:105,name:"Adeeba Khan",            course:"B.B.A.",       company:"Woxen Digital",                    salary:240000},
+        {no:106,name:"Tripti Nag",             course:"B.B.A.",       company:"ABL SAT Technologies",             salary:240000},
+        {no:107,name:"Khushi Gupta",           course:"B.B.A.",       company:"Outpace Consulting Services",      salary:168000},
+    ];
+
+    /* ─── Helpers ─── */
+    const courseKey = c => {
+        if (c === 'B.Com.')        return 'bcom';
+        if (c === 'B.Com.(Hons.)') return 'bcomh';
+        if (c === 'B.C.A.')        return 'bca';
+        return 'bba';
+    };
+    const courseCls = c => ({ bcom:'cb-bcom', bcomh:'cb-bcomh', bca:'cb-bca', bba:'cb-bba' })[courseKey(c)];
+    const formatSal = v => {
+        if (v >= 100000) return (v/100000).toFixed(2).replace(/\.00$/,'') + ' LPA';
+        return '₹' + v.toLocaleString('en-IN');
+    };
+    const salCls = v => {
+        if (v >= 400000) return 'sal-high';
+        if (v >= 300000) return 'sal-mid';
+        if (v >= 200000) return 'sal-std';
+        return 'sal-entry';
+    };
+
+    /* ─── Company grid ─── */
+    const cmpMap = {};
+    placements.forEach(p => { cmpMap[p.company] = (cmpMap[p.company]||0)+1; });
+    const sortedCmp = Object.entries(cmpMap).sort((a,b)=>b[1]-a[1]);
+    document.getElementById('companyGrid').innerHTML = sortedCmp.map(([name,cnt]) => `
+        <div class="cmp-card">
+            <div class="cmp-count">${cnt}</div>
+            <div class="cmp-name">${name}</div>
+            <div class="cmp-label">student${cnt>1?'s':''} placed</div>
+        </div>`).join('');
+
+    /* ─── Course filter buttons ─── */
+    const courses = [
+        {k:'all',t:'All'},
+        {k:'bcom',t:'B.Com.'},
+        {k:'bcomh',t:'B.Com. (Hons.)'},
+        {k:'bca',t:'B.C.A.'},
+        {k:'bba',t:'B.B.A.'},
+    ];
+    const cf = document.getElementById('courseFilters');
+    courses.forEach(c => {
+        const b = document.createElement('button');
+        b.className = 'cf-btn' + (c.k==='all'?' on':'');
+        b.dataset.k = c.k; b.textContent = c.t;
+        cf.appendChild(b);
+    });
+
+    /* ─── State ─── */
+    let activeCourse = 'all';
+    let searchQ = '';
+    let sortCol = null;
+    let sortDir = 1;
+
+    function getFiltered() {
+        return placements.filter(p => {
+            const cMatch = activeCourse === 'all' || courseKey(p.course) === activeCourse;
+            const q = searchQ.toLowerCase();
+            const sMatch = !q ||
+                p.name.toLowerCase().includes(q) ||
+                p.company.toLowerCase().includes(q) ||
+                p.course.toLowerCase().includes(q);
+            return cMatch && sMatch;
+        });
+    }
+
+    function renderTable() {
+        let data = getFiltered();
+        if (sortCol) {
+            data = [...data].sort((a,b) => {
+                let av = a[sortCol], bv = b[sortCol];
+                if (typeof av === 'string') av = av.toLowerCase();
+                if (typeof bv === 'string') bv = bv.toLowerCase();
+                return av < bv ? -sortDir : av > bv ? sortDir : 0;
+            });
+        }
+        const cnt = document.getElementById('resCount');
+        cnt.innerHTML = `Showing <strong>${data.length}</strong> of <strong>${placements.length}</strong> records`;
+
+        const tbody = document.getElementById('resultsTbody');
+        if (!data.length) {
+            tbody.innerHTML = `<tr><td colspan="5"><div class="no-results">
+                <i class="fa-solid fa-magnifying-glass"></i>No records found</div></td></tr>`;
+            return;
+        }
+        tbody.innerHTML = data.map((p,i) => `
+            <tr>
+                <td class="td-sno">${i+1}</td>
+                <td class="td-name">${p.name}</td>
+                <td class="td-course"><span class="cbadge ${courseCls(p.course)}">${p.course}</span></td>
+                <td class="td-company">${p.company}</td>
+                <td class="td-salary"><span class="sal-badge ${salCls(p.salary)}">${formatSal(p.salary)}</span></td>
+            </tr>`).join('');
+    }
+
+    /* ─── Events ─── */
+    cf.addEventListener('click', e => {
+        const b = e.target.closest('.cf-btn');
+        if (!b) return;
+        document.querySelectorAll('.cf-btn').forEach(x => x.classList.remove('on'));
+        b.classList.add('on');
+        activeCourse = b.dataset.k;
+        renderTable();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+        searchQ = e.target.value;
+        renderTable();
+    });
+
+    document.querySelectorAll('.rtbl thead th[data-col]').forEach(th => {
+        th.addEventListener('click', () => {
+            const col = th.dataset.col;
+            if (sortCol === col) { sortDir *= -1; }
+            else { sortCol = col; sortDir = 1; }
+            document.querySelectorAll('.rtbl thead th').forEach(t => t.classList.remove('sorted'));
+            th.classList.add('sorted');
+            const icon = th.querySelector('.sort-icon');
+            if (icon) icon.className = `fa-solid ${sortDir===1?'fa-sort-up':'fa-sort-down'} sort-icon`;
+            renderTable();
+        });
+    });
+
+    /* ─── Scroll reveal ─── */
+    const obs = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+    renderTable();
+    </script>
+    <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>
