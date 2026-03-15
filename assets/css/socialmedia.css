@@ -1,0 +1,252 @@
+/* ==========================================================================
+   SOCIAL MEDIA HUB CSS
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    color: #333;
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+  position: relative;
+  padding: 160px 0 100px 0;
+  background: url("../Academics/assets/course.jpg") no-repeat center center/cover;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to right,
+    rgba(69, 10, 10, 0.8) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(69, 10, 10, 0.8) 100%
+  );
+    z-index: 1;
+}
+
+.z-3 { z-index: 3 !important; }
+
+/* Typography */
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+        line-height: 1;
+    background: linear-gradient(to bottom, #ffffff 30%, #ff1f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -3px;
+}
+
+.main-description {
+    max-width: 650px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff!important;
+    border: 2px solid rgba(255, 255, 255, 0.8)!important;
+    transition: all 0.4s ease-in-out!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71836 100%) !important;
+    border-color: #a71836!important;
+    color: #fff!important;
+    box-shadow: 0 8px 15px rgba(230, 74, 25, 0.4);
+}
+
+/* SECTIONS */
+.social-platforms, .recent-updates {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sub-heading {
+    color: #a71836;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    font-weight: 800;
+    margin: 0;
+}
+
+.heading-line {
+    width: 80px;
+    height: 4px;
+    background: #a71836;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* SOCIAL CARDS */
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-decoration: none !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-card h5 {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(167, 24, 54, 0.1);
+}
+
+.social-card:hover .social-icon {
+    transform: scale(1.2);
+}
+
+/* Platform Colors */
+.facebook .social-icon { color: #1877F2; }
+.instagram .social-icon { color: #E4405F; }
+.twitter .social-icon { color: #000; }
+.youtube .social-icon { color: #FF0000; }
+.linkedin .social-icon { color: #0077B5; }
+
+/* RECENT UPDATES */
+.update-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+    border-left: 5px solid #a71836;
+}
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777;
+}
+
+.platform-badge {
+    color: #a71836;
+    font-size: 1.2rem;
+}
+
+.update-card h4 {
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.update-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    font-weight: 700;
+    color: #a71836;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+    gap: 12px;
+    color: #450a0a;
+}
+
+.update-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .social-platforms, .recent-updates {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .social-card {
+        padding: 20px 10px;
+    }
+    .social-icon {
+        font-size: 2rem;
+    }
+    .social-card h5 {
+        font-size: 0.9rem;
+    }
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -28,8 +28,8 @@
 
     /* Fonts */
     --FD: 'Arial', sans-serif;
-    --FB: 'Arial', sans-serif;
-    --FC: 'Arial', sans-serif;
+    --FB: 'Inter', Arial, sans-serif;
+    --FC: 'Inter', Arial, sans-serif;
 
     /* Radii */
     --r4:  4px;
@@ -95,9 +95,11 @@ a   { text-decoration: none; }
 }
 
 .main-description {
-    max-width: 650px;
-    font-weight: 400;
+    max-width: 680px;
+    font-size: 1.15rem;
+    font-weight: 450;
     letter-spacing: 0.5px;
+    line-height: 1.6;
 }
 
 .btn-menu {
@@ -133,18 +135,20 @@ a   { text-decoration: none; }
 ══════════════════════════════════════ */
 .sec-label {
     display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--FC); font-size: 0.70rem; font-weight: 700;
-    letter-spacing: 3.5px; text-transform: uppercase; color: var(--P);
+    font-family: var(--FB); font-size: 0.9rem; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--P);
 }
 .sec-label::before {
     content: ''; display: inline-block;
-    width: 26px; height: 2px; background: var(--P); flex-shrink: 0;
+    width: 25px; height: 3px; background: var(--P); flex-shrink: 0;
+    border-radius: 2px;
 }
 
 .sec-h {
     font-family: var(--FD);
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    line-height: 1; letter-spacing: 1px; color: var(--TH);
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1; letter-spacing: -2px; color: var(--TH);
 }
 .acc { color: var(--P); }
 
@@ -155,7 +159,7 @@ a   { text-decoration: none; }
 }
 .stripe.cx { margin-left: auto; margin-right: auto; }
 
-.sec-p { color: var(--TB); font-size: 0.93rem; line-height: 1.80; font-weight: 400; }
+.sec-p { color: var(--TB); font-size: 1.05rem; line-height: 1.7; font-weight: 450; text-align: justify; }
 
 .btn-rd {
     display: inline-flex; align-items: center; gap: 8px;
@@ -221,8 +225,8 @@ a   { text-decoration: none; }
     border-radius: 10px; display: flex; align-items: center;
     justify-content: center; font-size: .9rem; color: #fff; flex-shrink: 0;
 }
-.s-num { font-family: var(--FD); font-size: 1.5rem; line-height: 1; color: var(--TH); }
-.s-lbl { font-size: .70rem; color: var(--TM); }
+.s-num { font-family: var(--FD); font-size: 1.5rem; font-weight: 900; line-height: 1; color: var(--TH); }
+.s-lbl { font-size: .75rem; font-weight: 700; color: var(--TM); }
 
 /* ══════════════════════════════════════
    SERVICES SECTION
@@ -256,10 +260,10 @@ a   { text-decoration: none; }
     color: #fff; box-shadow: 0 0 18px var(--P-glow);
 }
 .svc-card h4 {
-    font-family: var(--FC); font-size: 1.15rem;
-    font-weight: 700; color: var(--TH); margin-bottom: 9px;
+    font-family: var(--FC); font-size: 1.2rem;
+    font-weight: 800; color: var(--TH); margin-bottom: 9px;
 }
-.svc-card p { font-size: .87rem; color: var(--TB); line-height: 1.72; flex: 1; }
+.svc-card p { font-size: .9rem; color: var(--TB); line-height: 1.7; text-align: justify; flex: 1; }
 .svc-more {
     margin-top: 18px; color: var(--P);
     font-family: var(--FC); font-size: .76rem; font-weight: 700;
@@ -303,7 +307,7 @@ a   { text-decoration: none; }
 }
 .msg-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--P); }
 
-.msg-body { color: var(--TB); font-size: .91rem; line-height: 1.82; margin-bottom: 28px; }
+.msg-body { color: var(--TB); font-size: 1rem; line-height: 1.8; margin-bottom: 28px; text-align: justify; }
 
 .msg-person {
     display: flex; align-items: center; gap: 15px;
@@ -316,8 +320,8 @@ a   { text-decoration: none; }
     display: flex; align-items: center; justify-content: center;
     font-family: var(--FD); font-size: 1.35rem; color: #fff; flex-shrink: 0;
 }
-.msg-name { font-family: var(--FC); font-size: 1.08rem; font-weight: 700; color: var(--TH); display: block; line-height: 1.2; }
-.msg-role { font-size: .72rem; color: var(--P); font-weight: 600; letter-spacing: .8px; text-transform: uppercase; }
+.msg-name { font-family: var(--FC); font-size: 1.1rem; font-weight: 800; color: var(--TH); display: block; line-height: 1.2; }
+.msg-role { font-size: .75rem; color: var(--P); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 
 /*
     TEAM SECTION
@@ -367,11 +371,11 @@ a   { text-decoration: none; }
 .bp {
     background: #f5f3f4; border: 1px solid var(--BD);
     color: var(--TH); padding: 3px 9px; border-radius: var(--r4);
-    font-size: .75rem; font-family: var(--FC); font-weight: 600; white-space: nowrap;
+    font-size: 0.8rem; font-family: var(--FB); font-weight: 600; white-space: nowrap;
 }
 .br {
     padding: 3px 11px; border-radius: var(--rp);
-    font-size: .67rem; font-family: var(--FC); font-weight: 700;
+    font-size: 0.75rem; font-family: var(--FB); font-weight: 700;
     letter-spacing: .4px; text-transform: uppercase; white-space: nowrap;
 }
 .rc { background:rgba(167,24,54,0.08); border:1px solid rgba(167,24,54,0.30); color:#8f1430; }
@@ -490,8 +494,8 @@ a   { text-decoration: none; }
     animation: blinkDot 2.2s ease-in-out infinite;
 }
 @keyframes blinkDot { 0%,100%{opacity:1} 50%{opacity:.25} }
-.ntc-txt { font-size: .87rem; color: var(--TB); flex: 1; line-height: 1.45; }
-.ntc-dt  { font-family: var(--FC); font-size: .66rem; letter-spacing: 1px; color: var(--TF); white-space: nowrap; flex-shrink: 0; }
+.ntc-txt { font-size: 1rem; font-weight: 500; color: var(--TB); flex: 1; line-height: 1.5; }
+.ntc-dt  { font-family: var(--FB); font-size: .75rem; font-weight: 700; letter-spacing: 1px; color: var(--TF); white-space: nowrap; flex-shrink: 0; }
 
 /* ══════════════════════════════════════
    CONTACT

@@ -1,0 +1,220 @@
+/* =====================================
+   Examination Schedule Page Styles 
+   ===================================== */
+
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(69, 10, 10, 0.8) 0%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(69, 10, 10, 0.8) 100%);
+    z-index: 1;
+}
+
+.z-3 {
+    z-index: 3 !important;
+}
+
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.5;
+    background: linear-gradient(to bottom, #ffffff 40%, #ff5252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.main-description {
+    max-width: 700px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+}
+
+/* Hero Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 12px 30px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71844 100%) !important;
+    border-color: #a71836;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Date Sheet Cards */
+.schedule-section {
+    padding: 80px 0;
+    background: #fdfdfd;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sub-heading {
+    display: block;
+    color: #a71836;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(167, 24, 54, 0.1);
+    border-color: rgba(167, 24, 54, 0.2);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(167, 24, 54, 0.1);
+    color: #a71836;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #a71836 0%, #7d1228 100%);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(167, 24, 54, 0.2);
+    letter-spacing: 1px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.card-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #a71836 0%, #7d1228 100%);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+.btn-download:hover {
+    box-shadow: 0 8px 20px rgba(167, 24, 54, 0.3);
+    transform: scale(1.02);
+    color: #fff;
+}
+
+/* Info Section */
+.info-banner {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 60px;
+    border-left: 6px solid #a71836;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.info-banner h4 {
+    color: #a71836;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.info-item i {
+    color: #a71836;
+    margin-top: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices & Announcements | National P.G. College</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap & CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/notices.css">
+</head>
+<body class="notice-page">
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="gradient-overlay-v"></div>
+        <div class="container position-relative z-3 text-center">
+            <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase text-white shadow-sm">
+              College Updates</span>
+            <h1 class="main-title">Notices & <br><span>Announcements</span></h1>
+            <p class="main-description text-white opacity-75 mt-4">
+                Stay updated with the latest academic schedules, administrative notices, and official announcements from National P.G. College.
+            </p>
+           <div class="d-flex justify-content-center gap-3 mb-5 pb-5">
+                <a href="#notices" class="btn btn-menu btn-lg px-5 py-3 fw-bold">Explore All Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="notice-main py-5" id="notices">
+        <div class="container">
+            <!-- Filter Bar -->
+            <div class="notice-filter-bar mb-5">
+                <button class="filter-btn active" data-filter="all">All Updates</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="exam">Examinations</button>
+                <button class="filter-btn" data-filter="admin">Administrative</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+            </div>
+
+            <!-- Notice Grid/List -->
+            <div class="notices-container">
+                <div class="notice-list-item" data-category="exam">
+                    <div class="notice-meta">
+                        <span class="notice-tag academic">Admission</span>
+                        <span class="notice-date">Mar 15, 2026</span>
+                    </div>
+                    <div class="notice-info">
+                        <h3 class="notice-title">Admission: B.Com. with CFA</h3>
+                        <p class="notice-excerpt">Special admission notice for B.Com. program with Chartered Financial Analyst (CFA) integration for the upcoming session.</p>
+                    </div>
+                    <div class="notice-actions">
+                        <a href="https://www.npgc.in/Announcement.aspx?Id=21792" class="btn-notice-view">View Notice <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn-notice-dl" title="Download PDF"><i class="fas fa-file-pdf"></i></a>
+                    </div>
+                </div>
+
+                <div class="notice-list-item" data-category="academic">
+                    <div class="notice-meta">
+                        <span class="notice-tag academic">Admission</span>
+                        <span class="notice-date">Mar 15, 2026</span>
+                    </div>
+                    <div class="notice-info">
+                        <h3 class="notice-title">Admission: B.Com. with ACCA</h3>
+                        <p class="notice-excerpt">Special admission notice for B.Com. program with ACCA (UK) integration. Applications invited from eligible candidates.</p>
+                    </div>
+                    <div class="notice-actions">
+                        <a href="https://www.npgc.in/Announcement.aspx?Id=21791" class="btn-notice-view">View Notice <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn-notice-dl" title="Download PDF"><i class="fas fa-file-pdf"></i></a>
+                    </div>
+                </div>
+
+                <div class="notice-list-item" data-category="admin">
+                    <div class="notice-meta">
+                        <span class="notice-tag admin">Holiday</span>
+                        <span class="notice-date">Mar 11, 2026</span>
+                    </div>
+                    <div class="notice-info">
+                        <h3 class="notice-title">Holiday Notice: 11 March 2026</h3>
+                        <p class="notice-excerpt">The college will remain closed on March 11, 2026. Normal administrative and academic operations will resume on the next working day.</p>
+                    </div>
+                    <div class="notice-actions">
+                        <a href="https://www.npgc.in/Announcement.aspx?Id=21790" class="btn-notice-view">View Notice <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <div class="notice-list-item" data-category="admin">
+                    <div class="notice-meta">
+                        <span class="notice-tag academic">Staff</span>
+                        <span class="notice-date">Mar 10, 2026</span>
+                    </div>
+                    <div class="notice-info">
+                        <h3 class="notice-title">Guest lecturer in the department of history</h3>
+                        <p class="notice-excerpt">Applications are invited for the post of Guest Lecturer in the Department of History. Interested candidates should check the detailed eligibility criteria.</p>
+                    </div>
+                    <div class="notice-actions">
+                        <a href="https://www.npgc.in/Announcement.aspx?Id=21788" class="btn-notice-view">View Notice <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+
+                <div class="notice-list-item" data-category="exam">
+                    <div class="notice-meta">
+                        <span class="notice-tag exam">Exam</span>
+                        <span class="notice-date">Mar 05, 2026</span>
+                    </div>
+                    <div class="notice-info">
+                        <h3 class="notice-title">Examination Form Notice : June-2026</h3>
+                        <p class="notice-excerpt">Important announcement regarding the submission of examination forms for the June-2026 end-semester examinations.</p>
+                    </div>
+                    <div class="notice-actions">
+                        <a href="https://www.npgc.in/Announcement.aspx?Id=21787" class="btn-notice-view">View Notice <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn-notice-dl" title="Download PDF"><i class="fas fa-file-pdf"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination (Placeholder) -->
+            <div class="pagination-wrapper mt-5 text-center">
+                <nav aria-label="Notice pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/loadcomponents.js"></script>
+    <script>
+        // Simple filter logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.notice-list-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

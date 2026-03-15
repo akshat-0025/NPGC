@@ -1,0 +1,245 @@
+/* =====================================
+   Online Study Material Page Styles 
+   ===================================== */
+
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px 0;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.gradient-overlay-v {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(69, 10, 10, 0.8) 0%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(69, 10, 10, 0.8) 100%);
+    z-index: 1;
+}
+
+.z-3 {
+    z-index: 3 !important;
+}
+
+.main-title {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.5;
+    background: linear-gradient(to bottom, #ffffff 40%, #ff5252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.main-description {
+    max-width: 700px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+}
+
+/* Hero Buttons */
+.btn-menu {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 12px 30px;
+}
+
+.btn-menu:hover {
+    background: linear-gradient(to bottom, #a71836 0%, #a71844 100%) !important;
+    border-color: #a71836;
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(167, 24, 54, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Resource Cards */
+.resource-section {
+    padding: 80px 0;
+    background: #fdfdfd;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sub-heading {
+    display: block;
+    color: #a71836;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.heading-line {
+    width: 60px;
+    height: 4px;
+    background: #a71836;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Category Cards */
+.category-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title-bar {
+    background: linear-gradient(135deg, #a71836 0%, #450a0a 100%);
+    padding: 20px 25px;
+    color: #fff;
+}
+
+.card-title-bar h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resource-list {
+    padding: 25px;
+    list-style: none;
+    margin: 0;
+}
+
+.resource-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.resource-item:hover {
+    background: rgba(167, 24, 54, 0.03);
+    border-color: rgba(167, 24, 54, 0.1);
+}
+
+.resource-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.resource-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f8f9fa;
+    color: #a71836;
+    font-size: 1rem;
+}
+
+.resource-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.btn-download {
+    color: #a71836;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.resource-item:hover .btn-download {
+    transform: scale(1.2);
+    color: #7d1228;
+}
+
+
+/* External Platforms */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.platform-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.platform-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transform: translateY(-3px);
+    border-color: #a71836;
+}
+
+.platform-logo {
+    font-size: 2.5rem;
+    color: #a71836;
+    margin-bottom: 15px;
+}
+
+.platform-name {
+    font-weight: 700;
+    display: block;
+    color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .youtube-spotlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+}
