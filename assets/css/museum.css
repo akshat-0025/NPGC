@@ -31,7 +31,7 @@ body {
     position: relative;
     padding: 120px 0 80px 0;
     /* Use one of the high quality vertical HDR images as the hero background */
-    background: url('assets/IMG_20260224_123208929_HDR_PORTRAIT.jpg') no-repeat center center/cover;
+    background: url('../images/museum-hero.jpg') no-repeat center center/cover;
     min-height: 50vh;
     display: flex;
     align-items: center;

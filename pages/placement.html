@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/placement.css">
+    <style>
+        /* Ensuring person images are perfectly circular and professional */
+        .msg-av-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #dc3545; /* Matches your danger/red theme */
+            margin-right: 15px;
+        }
+        .msg-person {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
 
     <div id="navbar-placeholder"></div>
@@ -63,7 +81,6 @@
         </div>
     </header>
 
-    <!-- ═════════ ABOUT ═════════ -->
     <section class="about-sec" id="about">
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-start">
@@ -121,7 +138,6 @@
         </div>
     </section>
 
-    <!-- ═════════ SERVICES ═════════ -->
     <section class="svc-sec" id="services">
         <div class="container">
             <div class="text-center mb-4 mb-md-5 rv">
@@ -182,7 +198,6 @@
         </div>
     </section>
 
-    <!-- ═════════ MESSAGES ═════════ -->
     <section class="msg-sec" id="messages">
         <div class="container">
             <div class="text-center mb-4 mb-md-5 rv">
@@ -198,15 +213,12 @@
                             Welcome to the esteemed halls of National Post Graduate College, where academic excellence
                             converges with a commitment to shaping successful futures. National PG College is not merely
                             an institution; it's a launchpad for promising careers. Our unwavering focus extends beyond
-                            the classroom into the dynamic realm of professional placements. Our Placement Cell has
-                            proven to be a beacon of success. We take pride in cultivating strong industry connections
-                            that pave the way for our students' seamless integration into the professional landscape.
-                            Join us on this journey — National Post Graduate College: Nurturing Minds, Shaping Futures.
+                            the classroom into the dynamic realm of professional placements.
                         </p>
                         <div class="msg-person">
-                            <div class="msg-av">UR</div>
+                            <img src="../assets/images/placement-manager.jpg" alt="Mr. Ujjawal Raman Singh" class="msg-av-img">
                             <div>
-                                <span class="msg-name">Mr. Ujjawal Raman Singh</span>
+                                <span class="msg-name d-block">Mr. Ujjawal Raman Singh</span>
                                 <span class="msg-role">Manager — NPGC</span>
                             </div>
                         </div>
@@ -218,15 +230,12 @@
                         <p class="msg-body">
                             Our college believes in holistic education, where academic excellence is complemented by
                             character development, leadership skills, and a strong sense of social responsibility.
-                            NPGC takes pride in its alumni's success and a strong placement track record. From
-                            inter-school training to professional interview opportunities, the college leaves no stone
-                            unturned to help students connect with prospective employers. The Placement Cell, driven
-                            by students, bridges their academic journey with the professional world.
+                            NPGC takes pride in its alumni's success and a strong placement track record.
                         </p>
                         <div class="msg-person">
-                            <div class="msg-av">DK</div>
+                            <img src="../assets/images/principal.jpg" alt="Prof. Devendra Kumar Singh" class="msg-av-img">
                             <div>
-                                <span class="msg-name">Prof. Devendra Kumar Singh</span>
+                                <span class="msg-name d-block">Prof. Devendra Kumar Singh</span>
                                 <span class="msg-role">Principal — NPGC</span>
                             </div>
                         </div>
@@ -236,19 +245,17 @@
         </div>
     </section>
 
-    <!-- TRAINING AND PLACEMENT CELL TEAM -->
-     <section class="team-sec" id="team">
+    <section class="team-sec" id="team">
         <div class="container mb-4 mb-md-5">
             <div class="text-center rv">
                 <span class="sec-label">Placement Coordinators</span>
-                <h2 class="sec-h mt-2">Our Major <span class="acc">Training and Placement Team</span></h2>
+                <h2 class="sec-h mt-2">Training and <span class="acc">Placement Team</span></h2>
                 <div class="stripe cx"></div>
             </div>
         </div>
         <img src="../assets/images/PlacementCellTeam.png" class="img-fluid d-block mx-auto mb-3" alt="Placement Cell Team">
     </section>
      
-    <!-- ═════════ COMMITTEE ═════════ -->
     <section class="com-sec" id="committee">
         <div class="container">
             <div class="text-center mb-4 mb-md-5 rv">
@@ -270,7 +277,6 @@
         </div>
     </section>
 
-    <!-- ═════════ RECRUITERS ═════════ -->
     <section class="rec-sec" id="recruiters">
         <div class="container mb-4 mb-md-5">
             <div class="text-center rv">
@@ -285,7 +291,6 @@
         <img src="../assets/images/Recruiters.png" alt="Recruiters" class="rec-bg">
     </section>
 
-    <!-- ═════════ RESULTS ═════════ -->
     <section class="res-sec" id="results">
         <div class="container">
             <div class="text-center mb-4 mb-md-5 rv">
@@ -326,7 +331,6 @@
         </div>
     </section>
 
-    <!-- ═════════ NOTICES ═════════ -->
     <section class="ntc-sec" id="notices">
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-start">
@@ -352,7 +356,6 @@
         </div>
     </section>
 
-    <!-- ═════════ CONTACT ═════════ -->
     <section class="ctc-sec" id="contact">
         <div class="container">
             <div class="text-center mb-4 mb-md-5 rv">
@@ -396,4 +399,5 @@
     <script src="../assets/js/loadcomponents.js"></script>
     <script src="../assets/js/placement.js"></script>
 </body>
+
 </html>

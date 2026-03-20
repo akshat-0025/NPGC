@@ -6,7 +6,7 @@ document.querySelectorAll(".teacher").forEach(el => {
         html: true,
         content: `
         <div class="d-flex align-items-center gap-3">
-            <img src="assets/teacher.jpg" class="teacher-img" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+            <img src="../../images/administration-hero.jpeg" class="teacher-img" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
             <div>
                 <strong class="d-block">${el.innerText}</strong>
                 <small class="text-muted">Faculty Member</small>
