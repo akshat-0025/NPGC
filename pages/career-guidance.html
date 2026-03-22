@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Guidance – NPGC Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/career-guidance.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ══════════════════════  HERO  ══════════════════════ -->
+  <header class="hero-section">
+    <div class="gradient-overlay-v"></div>
+    <div class="container text-center text-white position-relative z-3">
+      <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase">
+        Placement Cell · NPGC
+      </span>
+      <h2 class="main-title fw-black text-uppercase mb-3">
+        Career<br>Guidance
+      </h2>
+      <p class="lead mx-auto mb-5 opacity-75 main-description">
+        NPGC's Placement Cell provides personalised career counselling, one-on-one
+        mentorship, industry expert talks, higher education guidance and structured
+        pathways to help every student find their direction.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mb-5 pb-5">
+        <a href="#sessions" class="btn btn-menu btn-lg px-5 py-3 fw-bold">Explore Sessions</a>
+      </div>
+      <div class="row g-4 mt-5 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">500+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Students Counselled</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">40+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Expert Talks</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">10+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Career Paths Mapped</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">92<span style="font-size:1.5rem;">%</span></h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Goal Clarity Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════  WHAT WE OFFER  ══════════════════════ -->
+  <section class="intro-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Our Approach</span>
+          <h2 class="sec-h">What We <span>Offer</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+              <div class="intro-card">
+                <div class="intro-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h4>One-on-One Counselling</h4>
+                <p>Personalised 30-minute sessions with the placement team to assess strengths, interests and suitable career options.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="intro-card">
+                <div class="intro-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                <h4>Industry Expert Talks</h4>
+                <p>Regular guest lectures and panel discussions by professionals from top companies across sectors.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="intro-card">
+                <div class="intro-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h4>Higher Education Guidance</h4>
+                <p>Counselling on MBA, CA, CFA, UPSC, MCA and other post-graduation options with entrance exam prep tips.</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="intro-card">
+                <div class="intro-icon"><i class="fa-solid fa-compass"></i></div>
+                <h4>Career Mapping Sessions</h4>
+                <p>Group workshops where students explore career pathways, required skills, salary benchmarks and growth trajectories.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  GUIDANCE SESSIONS  ══════════════════════ -->
+  <section class="sessions-sec reveal" id="sessions">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Past Sessions</span>
+          <h2 class="sec-h">Guidance <span>Sessions</span></h2>
+          <div class="sec-stripe"></div>
+
+          <div class="filter-bar">
+            <button class="fb-btn active" data-filter="all">All</button>
+            <button class="fb-btn" data-filter="counselling">Counselling</button>
+            <button class="fb-btn" data-filter="expert">Expert Talk</button>
+            <button class="fb-btn" data-filter="highered">Higher Education</button>
+            <button class="fb-btn" data-filter="govt">Govt. Exams</button>
+            <button class="fb-btn" data-filter="mapping">Career Mapping</button>
+          </div>
+
+          <div class="sessions-grid" id="sessionsGrid">
+
+            <div class="sess-card" data-sector="expert">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Expert Talk</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 20 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>Finance Careers in the BFSI Sector</h4>
+                <p>Senior Manager from ICICI Bank shared real-world insights into banking, investment advisory and wealth management career paths for commerce students.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Expert Talk</span>
+                  <span class="sess-tag blue">BFSI Sector</span>
+                  <span class="sess-tag green">Certificate</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 12 Mar 2025</span>
+                  <span><i class="fa-solid fa-users"></i> 180 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> 2 Hours</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+            <div class="sess-card" data-sector="highered">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Higher Education</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 14 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>MBA Entrance Prep &amp; College Selection</h4>
+                <p>Comprehensive session on CAT, MAT and XAT preparation strategies, top MBA colleges, eligibility criteria and ROI of an MBA degree.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Higher Education</span>
+                  <span class="sess-tag orange">CAT · MAT · XAT</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 20 Feb 2025</span>
+                  <span><i class="fa-solid fa-users"></i> 140 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> 3 Hours</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+            <div class="sess-card" data-sector="govt">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-landmark"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Govt. Exams</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 11 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>UPSC, SSC &amp; Banking Exam Roadmap</h4>
+                <p>IAS officer and bank PO alumni shared detailed exam patterns, preparation timelines, study materials and success strategies for government competitive exams.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Govt. Exams</span>
+                  <span class="sess-tag purple">UPSC · SSC · IBPS</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 8 Jan 2025</span>
+                  <span><i class="fa-solid fa-users"></i> 220 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> 3 Hours</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+            <div class="sess-card" data-sector="counselling">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Counselling</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 8 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>Individual Career Counselling Camp</h4>
+                <p>Two-day open camp where students could book personal 30-minute sessions with placement team members for goal-setting and career direction advice.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Counselling</span>
+                  <span class="sess-tag green">1-on-1 Format</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 15–16 Nov 2024</span>
+                  <span><i class="fa-solid fa-users"></i> 95 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> 2 Days</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+            <div class="sess-card" data-sector="mapping">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-compass"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Career Mapping</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 16 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>Career Pathways for Commerce Graduates</h4>
+                <p>Interactive workshop mapping 12 career paths available after B.Com. and M.Com. — from CA and CFA to fintech, e-commerce and data analytics.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Career Mapping</span>
+                  <span class="sess-tag blue">Commerce Stream</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 5 Oct 2024</span>
+                  <span><i class="fa-solid fa-users"></i> 160 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+            <div class="sess-card" data-sector="expert">
+              <div class="sess-photo">
+                <div class="sess-icon"><i class="fa-solid fa-robot"></i></div>
+                <div class="sess-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="sess-type-badge">Expert Talk</div>
+                <div class="sess-status">Completed</div>
+                <div class="sess-photo-count"><i class="fa-solid fa-images"></i> 12 Photos</div>
+              </div>
+              <div class="sess-body">
+                <h4>AI &amp; Tech Careers — The Next Decade</h4>
+                <p>Senior Data Scientist from Infosys explored how AI is reshaping job roles, what skills matter most, and how non-tech students can pivot into tech careers.</p>
+                <div class="sess-tags">
+                  <span class="sess-tag">Expert Talk</span>
+                  <span class="sess-tag blue">AI · Tech</span>
+                  <span class="sess-tag orange">Industry Expert</span>
+                </div>
+                <div class="sess-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 22 Sep 2024</span>
+                  <span><i class="fa-solid fa-users"></i> 200 Students</span>
+                  <span><i class="fa-solid fa-clock"></i> 2 Hours</span>
+                </div>
+                <a href="#" class="sess-btn past">View Report</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  CAREER PATHS  ══════════════════════ -->
+  <section class="paths-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">After Graduation</span>
+          <h2 class="sec-h">Career <span>Paths</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="paths-grid">
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h5>Banking &amp; Finance</h5>
+              <p>Roles in banking, insurance, investment and wealth management.</p>
+              <div class="path-roles">
+                <span class="path-role">Bank PO</span><span class="path-role">RM</span>
+                <span class="path-role">Analyst</span><span class="path-role">CA</span><span class="path-role">CFA</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <h5>Information Technology</h5>
+              <p>Software, data, cloud and cybersecurity roles for tech-inclined students.</p>
+              <div class="path-roles">
+                <span class="path-role">Developer</span><span class="path-role">Data Analyst</span>
+                <span class="path-role">QA</span><span class="path-role">Cloud</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-landmark"></i></div>
+              <h5>Government Services</h5>
+              <p>UPSC Civil Services, SSC, Banking (IBPS/SBI), State PSC and defence.</p>
+              <div class="path-roles">
+                <span class="path-role">IAS / IPS</span><span class="path-role">SSC CGL</span>
+                <span class="path-role">IBPS PO</span><span class="path-role">State PSC</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h5>Higher Education</h5>
+              <p>MBA, M.Sc., M.A., MCA, CA, CFA, CPA and global university admissions.</p>
+              <div class="path-roles">
+                <span class="path-role">MBA</span><span class="path-role">CA</span>
+                <span class="path-role">CFA</span><span class="path-role">MCA</span><span class="path-role">M.Sc.</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-bullhorn"></i></div>
+              <h5>Marketing &amp; Media</h5>
+              <p>Digital marketing, content creation, PR, journalism and brand management.</p>
+              <div class="path-roles">
+                <span class="path-role">Digital Mktr.</span><span class="path-role">Content</span>
+                <span class="path-role">PR</span><span class="path-role">Brand Mgr.</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-hospital"></i></div>
+              <h5>Healthcare</h5>
+              <p>Clinical roles, hospital management and health informatics for B.VOC. students.</p>
+              <div class="path-roles">
+                <span class="path-role">MLT</span><span class="path-role">Physiotherapy</span>
+                <span class="path-role">Hosp. Mgmt.</span><span class="path-role">OT Tech</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-rocket"></i></div>
+              <h5>Entrepreneurship</h5>
+              <p>Start your own venture with NPGC's startup mentoring and incubation support.</p>
+              <div class="path-roles">
+                <span class="path-role">Founder</span><span class="path-role">Co-Founder</span>
+                <span class="path-role">Consultant</span><span class="path-role">Freelancer</span>
+              </div>
+            </div>
+            <div class="path-card">
+              <div class="path-icon"><i class="fa-solid fa-people-group"></i></div>
+              <h5>Human Resources</h5>
+              <p>Talent acquisition, L&amp;D, HRBP and organisational development roles.</p>
+              <div class="path-roles">
+                <span class="path-role">HR Executive</span><span class="path-role">Recruiter</span>
+                <span class="path-role">L&amp;D</span><span class="path-role">HRBP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  PHOTO GALLERY  ══════════════════════ -->
+  <section class="gallery-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Session Highlights</span>
+          <h2 class="sec-h">Photo <span>Gallery</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="photo-grid">
+            <div class="pg-item big">
+              <!-- Replace: <img src="../images/career/featured.jpg" alt="Career Session" /> -->
+              <div class="pg-icon"><i class="fa-solid fa-camera-retro"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+              <div class="pg-caption">Expert Talk — BFSI Careers · Mar 2025</div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item wide">
+              <div class="pg-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+              <div class="pg-caption">MBA Guidance Workshop · Feb 2025</div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-compass"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-landmark"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  EXPERT MENTORS  ══════════════════════ -->
+  <section class="mentors-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Our Guides</span>
+          <h2 class="sec-h">Expert <span>Mentors</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="mentors-grid">
+            <div class="mentor-card">
+              <div class="mentor-avatar">RS</div>
+              <div class="mentor-domain">Finance &amp; Banking</div>
+              <div class="mentor-name">Rahul Sharma</div>
+              <div class="mentor-title">Senior Manager, ICICI Bank · Lucknow</div>
+              <div class="mentor-tags">
+                <span class="mentor-tag">BFSI</span><span class="mentor-tag">Investments</span><span class="mentor-tag">CA</span>
+              </div>
+              <div class="mentor-socials">
+                <a class="mentor-soc" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="mentor-soc" href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="mentor-card">
+              <div class="mentor-avatar">PK</div>
+              <div class="mentor-domain">Technology &amp; Data</div>
+              <div class="mentor-name">Priya Kapoor</div>
+              <div class="mentor-title">Senior Data Scientist, Infosys · Bengaluru</div>
+              <div class="mentor-tags">
+                <span class="mentor-tag">Data Science</span><span class="mentor-tag">AI / ML</span>
+              </div>
+              <div class="mentor-socials">
+                <a class="mentor-soc" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="mentor-soc" href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="mentor-card">
+              <div class="mentor-avatar">AM</div>
+              <div class="mentor-domain">Government Services</div>
+              <div class="mentor-name">Arvind Mishra</div>
+              <div class="mentor-title">IAS Officer, UP Cadre · Lucknow</div>
+              <div class="mentor-tags">
+                <span class="mentor-tag">UPSC</span><span class="mentor-tag">Civil Services</span>
+              </div>
+              <div class="mentor-socials">
+                <a class="mentor-soc" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="mentor-soc" href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="mentor-card">
+              <div class="mentor-avatar">ST</div>
+              <div class="mentor-domain">Entrepreneurship</div>
+              <div class="mentor-name">Shreya Tiwari</div>
+              <div class="mentor-title">Founder, EdTech Startup · Lucknow</div>
+              <div class="mentor-tags">
+                <span class="mentor-tag">Startups</span><span class="mentor-tag">Funding</span><span class="mentor-tag">Pitch</span>
+              </div>
+              <div class="mentor-socials">
+                <a class="mentor-soc" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="mentor-soc" href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  STUDENT STORIES  ══════════════════════ -->
+  <section class="stories-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Transformed Paths</span>
+          <h2 class="sec-h">Student <span>Stories</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="stories-grid">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">MS</div>
+                <div class="story-meta">
+                  <strong>Mohit Singh</strong>
+                  <span class="s-prog">B.A. Economics, Batch 2024</span>
+                  <div class="story-outcome-badge"><i class="fa-solid fa-check"></i> IAS Aspirant → Selected</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"I had no idea where to start with UPSC. The NPGC career guidance session with the IAS officer changed everything. The roadmap they gave me was exactly what I needed. I'm now at my coaching institute with full clarity."</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Cleared UPSC Prelims 2024</strong>
+              </div>
+            </div>
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">DG</div>
+                <div class="story-meta">
+                  <strong>Divya Gupta</strong>
+                  <span class="s-prog">B.Com. Hons., Batch 2025</span>
+                  <div class="story-outcome-badge"><i class="fa-solid fa-check"></i> Placed at Deloitte</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"After the MBA vs Job counselling session, I chose to work first. The placement cell helped me understand the ROI and I got into Deloitte's audit team. Couldn't have made such a confident decision without the guidance."</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Deloitte — Audit Associate, 5 LPA</strong>
+              </div>
+            </div>
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">RV</div>
+                <div class="story-meta">
+                  <strong>Raj Verma</strong>
+                  <span class="s-prog">BCA, Batch 2024</span>
+                  <div class="story-outcome-badge"><i class="fa-solid fa-check"></i> Career Pivot to Data</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"I was confused between software development and data science. The expert talk by the Infosys data scientist made it clear. I upskilled on the side and now work as a Junior Data Analyst — something I'd never considered before."</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Data Analyst — ₹4.2 LPA</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  UPCOMING SESSIONS  ══════════════════════ -->
+  <section class="upcoming-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">What's Coming</span>
+          <h2 class="sec-h">Upcoming <span>Sessions</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="upcoming-list">
+            <div class="upcoming-item">
+              <div class="upcoming-date"><div class="ud-day">14</div><div class="ud-mon">Jul 25</div></div>
+              <div class="upcoming-info">
+                <h4>CA &amp; CFA Career Guidance — Expert Talk</h4>
+                <p>Chartered Accountant from Ernst &amp; Young will walk through the CA / CFA pathway, exam structure, timelines and earning potential.</p>
+                <div class="upcoming-meta">
+                  <span><i class="fa-solid fa-location-dot"></i> Seminar Hall, NPGC</span>
+                  <span><i class="fa-solid fa-clock"></i> 2 Hours</span>
+                  <span><i class="fa-solid fa-users"></i> B.Com., M.Com.</span>
+                  <span class="status-dot" style="color:#10b981;">Registrations Open</span>
+                </div>
+              </div>
+              <a href="#" class="upcoming-cta">Register Now</a>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date"><div class="ud-day">28</div><div class="ud-mon">Jul 25</div></div>
+              <div class="upcoming-info">
+                <h4>Individual Career Counselling Camp</h4>
+                <p>Book a personal 30-minute one-on-one session with NPGC's career guidance team. All final-year students encouraged to attend.</p>
+                <div class="upcoming-meta">
+                  <span><i class="fa-solid fa-location-dot"></i> Placement Cell Office</span>
+                  <span><i class="fa-solid fa-clock"></i> 2 Days (9 AM – 5 PM)</span>
+                  <span><i class="fa-solid fa-users"></i> All Final Year Students</span>
+                  <span class="status-dot" style="color:#10b981;">Registrations Open</span>
+                </div>
+              </div>
+              <a href="#" class="upcoming-cta">Book Slot</a>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date"><div class="ud-day">15</div><div class="ud-mon">Aug 25</div></div>
+              <div class="upcoming-info">
+                <h4>UPSC &amp; State PCS Preparation Strategy Session</h4>
+                <p>IAS officer and coaching expert will share the most effective study plan, optional subjects, and revision strategies for 2025–26 UPSC aspirants.</p>
+                <div class="upcoming-meta">
+                  <span><i class="fa-solid fa-location-dot"></i> Auditorium, NPGC</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                  <span><i class="fa-solid fa-users"></i> All Programmes</span>
+                  <span class="status-dot soon" style="color:#f59e0b;">Coming Soon</span>
+                </div>
+              </div>
+              <a href="#" class="upcoming-cta" style="background:#6b4d56;">Notify Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  HOW TO ACCESS  ══════════════════════ -->
+  <section class="process-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Getting Help</span>
+          <h2 class="sec-h">How to <span>Access</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="process-grid">
+            <div class="process-card">
+              <div class="step-circle">1</div>
+              <h4>Walk In or Register</h4>
+              <p>Visit the Placement Cell office or register online for upcoming guidance sessions and counselling camps.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">2</div>
+              <h4>Share Your Goals</h4>
+              <p>Discuss your academic background, interests and aspirations with our career team — no judgement, just guidance.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">3</div>
+              <h4>Get Your Roadmap</h4>
+              <p>Receive a personalised action plan with recommended skills, exams, certifications and timeline to achieve your goal.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">4</div>
+              <h4>Follow Up &amp; Grow</h4>
+              <p>Return for follow-up sessions as you progress. The placement cell stays with you through your entire final year journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/career-guidance.js"></script>
+  <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>

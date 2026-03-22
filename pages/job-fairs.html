@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Fairs – NPGC Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/job-fairs.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ══════════════════════  HERO  ══════════════════════ -->
+  <header class="hero-section">
+    <div class="gradient-overlay-v"></div>
+    <div class="container text-center text-white position-relative z-3">
+      <span class="badge rounded-pill bg-danger px-3 py-2 mb-4 tracking-widest text-xs uppercase">
+        Placement Cell · NPGC
+      </span>
+      <h2 class="main-title fw-black text-uppercase mb-3">
+        Job<br>Fairs
+      </h2>
+      <p class="lead mx-auto mb-5 opacity-75 main-description">
+        NPGC's Annual Job Fairs bring together top recruiters and talented graduates
+        under one roof — giving students the chance to meet multiple companies,
+        attend on-the-spot interviews and walk away with offers.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mb-5 pb-5">
+        <a href="#fairs" class="btn btn-menu btn-lg px-5 py-3 fw-bold">Explore Fairs</a>
+      </div>
+      <div class="row g-4 mt-5 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">8</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Job Fairs Held</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">80+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Companies Participated</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">600+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Offers Generated</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <h3 class="display-5 fw-bold mb-0">5000+</h3>
+            <p class="small text-danger fw-bold text-uppercase tracking-wider mt-2">Students Attended</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════  UPCOMING FAIR BANNER  ══════════════════════ -->
+  <section class="upcoming-banner-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Don't Miss It</span>
+          <h2 class="sec-h">Next <span>Job Fair</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="upcoming-banner">
+            <div class="ub-left">
+              <div class="ub-pill">Upcoming Event</div>
+              <h3>NPGC Annual Job Fair 2025 — 9th Edition</h3>
+              <p>
+                The biggest career event on the NPGC calendar returns. Over 20 top companies
+                will set up stalls on campus for a full day of walk-in interviews, pre-placement
+                talks and on-the-spot offer letters across IT, banking, retail, healthcare and more.
+              </p>
+              <div class="ub-meta-row">
+                <div class="ub-meta-item"><i class="fa-solid fa-calendar"></i> 25 September 2025</div>
+                <div class="ub-meta-item"><i class="fa-solid fa-clock"></i> 9:00 AM – 5:00 PM</div>
+                <div class="ub-meta-item"><i class="fa-solid fa-location-dot"></i> NPGC Campus, Lucknow</div>
+                <div class="ub-meta-item"><i class="fa-solid fa-building"></i> 20+ Companies</div>
+              </div>
+              <div class="ub-btns">
+                <a href="#" class="btn-ub-primary"><i class="fa-solid fa-user-plus"></i> Register Now — Free</a>
+                <a href="#" class="btn-ub-outline"><i class="fa-solid fa-file-pdf"></i> Download Brochure</a>
+              </div>
+            </div>
+            <div class="ub-right">
+              <div class="countdown-box">
+                <div class="countdown-label">Countdown to Job Fair</div>
+                <div class="countdown-grid">
+                  <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Days</span></div>
+                  <div class="cd-unit"><span class="cd-num" id="cd-hrs">--</span><span class="cd-lbl">Hrs</span></div>
+                  <div class="cd-unit"><span class="cd-num" id="cd-min">--</span><span class="cd-lbl">Min</span></div>
+                  <div class="cd-unit"><span class="cd-num" id="cd-sec">--</span><span class="cd-lbl">Sec</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  PAST FAIRS  ══════════════════════ -->
+  <section class="fairs-sec reveal" id="fairs">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Edition Archive</span>
+          <h2 class="sec-h">Past <span>Job Fairs</span></h2>
+          <div class="sec-stripe"></div>
+
+          <div class="filter-bar">
+            <button class="fb-btn active" data-filter="all">All Editions</button>
+            <button class="fb-btn" data-filter="annual">Annual Fair</button>
+            <button class="fb-btn" data-filter="sector">Sector Fair</button>
+            <button class="fb-btn" data-filter="mini">Mini Fair</button>
+          </div>
+
+          <div class="fairs-grid" id="fairsGrid">
+
+            <div class="fair-card" data-type="annual">
+              <div class="fair-photo">
+                <!-- Replace: <img src="../images/fairs/jf2025.jpg" alt="Job Fair 2025" /> -->
+                <div class="fair-photo-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">8th Edition</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 45 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>NPGC Annual Job Fair 2024–25</h4>
+                <p>The flagship annual event saw 22 companies across 6 sectors set up recruitment stalls at NPGC campus for a full day of walk-in interviews and on-the-spot offers.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">22</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">107</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">800+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Annual Fair</span>
+                  <span class="fair-tag blue">Multi-Sector</span>
+                  <span class="fair-tag green">On-the-Spot Offers</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 18 Mar 2025</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Full Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+            <div class="fair-card" data-type="sector">
+              <div class="fair-photo">
+                <div class="fair-photo-icon"><i class="fa-solid fa-landmark"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">Sector Fair</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 28 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>BFSI &amp; Finance Sector Job Fair</h4>
+                <p>Dedicated fair for banking, insurance and finance roles with 12 BFSI companies including ICICI Bank, HDFC Bank, Deloitte, EY and Axis Bank participating.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">12</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">68</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">450+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Sector Fair</span>
+                  <span class="fair-tag blue">BFSI</span>
+                  <span class="fair-tag green">On-the-Spot Offers</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 10 Jan 2025</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+            <div class="fair-card" data-type="mini">
+              <div class="fair-photo">
+                <div class="fair-photo-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">Mini Fair</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 18 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>IT &amp; Tech Mini Job Fair</h4>
+                <p>Focused mini fair exclusively for BCA and B.VOC. Software Development students, with 8 tech companies — including Infosys, Wipro and TCS — conducting technical interviews.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">8</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">42</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">200+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Mini Fair</span>
+                  <span class="fair-tag purple">IT / Tech</span>
+                  <span class="fair-tag green">BCA &amp; B.VOC.</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 5 Nov 2024</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+            <div class="fair-card" data-type="annual">
+              <div class="fair-photo">
+                <div class="fair-photo-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">7th Edition</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 52 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>NPGC Annual Job Fair 2023–24</h4>
+                <p>The 7th edition recorded the highest footfall with 1,000+ students attending and 18 companies making offers across commerce, management, IT and healthcare streams.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">18</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">92</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">1000+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Annual Fair</span>
+                  <span class="fair-tag blue">Multi-Sector</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 22 Mar 2024</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Full Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+            <div class="fair-card" data-type="sector">
+              <div class="fair-photo">
+                <div class="fair-photo-icon"><i class="fa-solid fa-shop"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">Sector Fair</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 20 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>Retail &amp; FMCG Sector Job Fair</h4>
+                <p>Reliance Retail, DMart, Amazon and 7 other retail brands recruited management trainees and operations executives from B.B.A., B.Com. and B.A. programmes.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">10</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">55</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">350+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Sector Fair</span>
+                  <span class="fair-tag blue">Retail</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 8 Aug 2024</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+            <div class="fair-card" data-type="mini">
+              <div class="fair-photo">
+                <div class="fair-photo-icon"><i class="fa-solid fa-hospital"></i></div>
+                <div class="fair-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                <div class="fair-edition-badge">Mini Fair</div>
+                <div class="fair-status">Completed</div>
+                <div class="fair-photo-count"><i class="fa-solid fa-images"></i> 14 Photos</div>
+              </div>
+              <div class="fair-body">
+                <h4>Healthcare &amp; Pharma Mini Fair</h4>
+                <p>Dedicated placement event for B.VOC. healthcare students — hospitals, diagnostic labs and pharmaceutical companies recruited for clinical and operations roles.</p>
+                <div class="fair-highlights">
+                  <div class="fh-item"><div class="fh-num">7</div><div class="fh-lbl">Companies</div></div>
+                  <div class="fh-item"><div class="fh-num">28</div><div class="fh-lbl">Offers</div></div>
+                  <div class="fh-item"><div class="fh-num">120+</div><div class="fh-lbl">Students</div></div>
+                </div>
+                <div class="fair-tags">
+                  <span class="fair-tag">Mini Fair</span>
+                  <span class="fair-tag green">Healthcare</span>
+                  <span class="fair-tag blue">B.VOC.</span>
+                </div>
+                <div class="fair-meta">
+                  <span><i class="fa-solid fa-calendar"></i> 15 Jun 2024</span>
+                  <span><i class="fa-solid fa-location-dot"></i> NPGC Campus</span>
+                  <span><i class="fa-solid fa-clock"></i> Half Day</span>
+                </div>
+                <a href="#" class="fair-btn past">View Report &amp; Photos</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  PHOTO GALLERY  ══════════════════════ -->
+  <section class="gallery-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Fair Highlights</span>
+          <h2 class="sec-h">Photo <span>Gallery</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="photo-grid">
+            <div class="pg-item big">
+              <!-- Replace: <img src="../images/fairs/gallery-featured.jpg" alt="Job Fair" /> -->
+              <div class="pg-icon"><i class="fa-solid fa-camera-retro"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+              <div class="pg-caption">Annual Job Fair 2024–25 — Mar 2025</div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-handshake"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item wide">
+              <div class="pg-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+              <div class="pg-caption">BFSI Sector Fair — Jan 2025</div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-file-signature"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+            <div class="pg-item">
+              <div class="pg-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="pg-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>View</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  COMPANIES WHO VISITED  ══════════════════════ -->
+  <section class="stalls-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Recruiter Stalls</span>
+          <h2 class="sec-h">Companies Who <span>Visited</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="stalls-grid">
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="stall-name">Deloitte India</div>
+              <div class="stall-roles">Audit, Tax, Consulting</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-landmark"></i></div>
+              <div class="stall-name">ICICI Bank</div>
+              <div class="stall-roles">RM, Ops, Sales</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="stall-name">Infosys BPM</div>
+              <div class="stall-roles">Software Dev., QA</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-shop"></i></div>
+              <div class="stall-name">Reliance Retail</div>
+              <div class="stall-roles">Mgmt. Trainee, Ops</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="stall-name">Ernst &amp; Young</div>
+              <div class="stall-roles">Tax, Compliance</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div class="stall-name">Razorpay</div>
+              <div class="stall-roles">Growth, Tech, Sales</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-hospital"></i></div>
+              <div class="stall-name">KGMU / Hospitals</div>
+              <div class="stall-roles">MLT, PT, OT Tech</div>
+              <div class="stall-fair">JF 2024–25</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <div class="stall-name">HDFC Bank</div>
+              <div class="stall-roles">RM, Operations</div>
+              <div class="stall-fair">JF 2023–24</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="stall-name">Wipro</div>
+              <div class="stall-roles">Developer, Tester</div>
+              <div class="stall-fair">JF 2023–24</div>
+            </div>
+            <div class="stall-card">
+              <div class="stall-icon"><i class="fa-solid fa-box"></i></div>
+              <div class="stall-name">Amazon</div>
+              <div class="stall-roles">Operations, Logistics</div>
+              <div class="stall-fair">JF 2023–24</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  STUDENT STORIES  ══════════════════════ -->
+  <section class="stories-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Placed at the Fair</span>
+          <h2 class="sec-h">Student <span>Stories</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="stories-grid">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">SK</div>
+                <div class="story-meta">
+                  <strong>Shreya Kapoor</strong>
+                  <span class="s-prog">B.Com. Hons., Batch 2025</span>
+                  <div class="story-co-badge"><i class="fa-solid fa-briefcase"></i> Placed at Deloitte</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"I walked into the Annual Job Fair with my resume and left with an offer letter from Deloitte the same day. The placement cell prepared us so well — the mock interviews really made the difference."</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Deloitte — Audit Associate, 5 LPA</strong>
+              </div>
+            </div>
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">AM</div>
+                <div class="story-meta">
+                  <strong>Arjun Mishra</strong>
+                  <span class="s-prog">BCA, Batch 2025</span>
+                  <div class="story-co-badge"><i class="fa-solid fa-briefcase"></i> Placed at Infosys</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"The IT Mini Fair was perfect for us BCA students. It was focused, not overwhelming. I cleared two rounds on-the-spot and got the Infosys offer letter within 3 days. Best day of my college life."</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Infosys BPM — Software Dev., 3.6 LPA</strong>
+              </div>
+            </div>
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar">NR</div>
+                <div class="story-meta">
+                  <strong>Neha Rawat</strong>
+                  <span class="s-prog">B.B.A., Batch 2024</span>
+                  <div class="story-co-badge"><i class="fa-solid fa-briefcase"></i> Placed at Reliance</div>
+                </div>
+              </div>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="story-text">"I hadn't even planned to attend the Retail Fair but a friend dragged me along. I met the Reliance HR, gave an impromptu interview and got a management trainee offer. Life really does happen at job fairs!"</p>
+              <div class="story-outcome">
+                <i class="fa-solid fa-circle-check"></i>
+                Outcome: <strong>Reliance Retail — Mgmt. Trainee, 3 LPA</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  HOW IT WORKS  ══════════════════════ -->
+  <section class="process-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Be Prepared</span>
+          <h2 class="sec-h">How to <span>Prepare</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="process-grid">
+            <div class="process-card">
+              <div class="step-circle">1</div>
+              <h4>Register Early</h4>
+              <p>Sign up through the placement cell before the deadline. Registered students get a fair kit, entry pass and priority queue for popular company stalls.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">2</div>
+              <h4>Polish Your Resume</h4>
+              <p>Bring 10–15 printed copies of your updated resume. The placement cell offers free resume review sessions in the week before every fair.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">3</div>
+              <h4>Research Companies</h4>
+              <p>Study the list of participating companies, their roles and expectations beforehand. Arrive knowing which stalls matter most to you.</p>
+            </div>
+            <div class="process-card">
+              <div class="step-circle">4</div>
+              <h4>Dress &amp; Arrive Early</h4>
+              <p>Dress professionally, arrive at 9 AM sharp and approach each company stall confidently. On-the-spot offers are given throughout the day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  COMPANIES TICKER  ══════════════════════ -->
+  <section class="ticker-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-10">
+          <span class="sec-label">Regular Participants</span>
+          <h2 class="sec-h">Fair <span>Recruiters</span></h2>
+          <div class="sec-stripe"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mq-outer">
+      <div class="mq-track" id="mqTrack"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════  REGISTER CTA  ══════════════════════ -->
+  <section class="cta-sec reveal">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Register for <span>Job Fair 2025</span></h2>
+        <p>Registration is free and open to all final-year and eligible students. Get your entry pass, fair brochure and company list — and walk in ready to be hired.</p>
+        <div class="cta-btns">
+          <a href="#" class="btn-cta-primary">
+            <i class="fa-solid fa-user-plus"></i> Register Now — Free
+          </a>
+          <a href="mailto:placement@npgc.in" class="btn-cta-outline">
+            <i class="fa-solid fa-envelope"></i> Contact Placement Cell
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/job-fairs.js"></script>
+  <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>
