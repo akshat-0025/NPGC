@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Fees Portal – NPGC Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/fees.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ══════════════════════════  LOGIN CARD  ══════════════════════════ -->
+  <div class="container reveal my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow">
+          <div class="row g-0">
+
+            <!-- LEFT -->
+            <div class="col-md-4 get p-4">
+              <h3 class="mb-4">Fee Portal</h3>
+
+              <div class="mb-3 data">
+                <h5><i class="fas fa-university"></i> College</h5>
+                <p>National Post Graduate College<br>2, Rana Pratap Marg<br>Lucknow – 226001<br>Uttar Pradesh (India)</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-clock"></i> Portal Hours</h5>
+                <p>Available 24 × 7<br>Payment support: Mon – Sat<br>8:00 AM – 4:00 PM</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-headset"></i> Tech Support</h5>
+                <p>
+                  <a href="mailto:helpdesk@sritechnocrat.com">helpdesk@sritechnocrat.com</a><br>
+                  <a href="tel:7080126669">7080126669</a>
+                </p>
+              </div>
+
+              <div class="fee-quick">
+                <div class="fq-row">
+                  <div class="fq-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                  <div class="fq-text"><strong>View Dues</strong><span>Login to check pending fees</span></div>
+                </div>
+                <div class="fq-row">
+                  <div class="fq-icon"><i class="fa-solid fa-credit-card"></i></div>
+                  <div class="fq-text"><strong>Pay Online</strong><span>UPI · Card · Net Banking</span></div>
+                </div>
+                <div class="fq-row">
+                  <div class="fq-icon"><i class="fa-solid fa-receipt"></i></div>
+                  <div class="fq-text"><strong>Download Receipt</strong><span>Instant PDF after payment</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-md-8 p-4 form-panel">
+              <h2 class="mb-4">Sign In to Pay Fees</h2>
+
+              <div class="form-err" id="formErr">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="errMsg">Please fill in all fields.</span>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="rollNo">Roll Number <span>*</span></label>
+                <div class="inp-group">
+                  <input type="text" class="form-control" id="rollNo" placeholder="Enter your roll number" autocomplete="off" required />
+                  <i class="fa-solid fa-id-card"></i>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="mobile">Registered Mobile Number <span>*</span></label>
+                <div class="inp-group">
+                  <input type="tel" class="form-control" id="mobile" placeholder="10-digit mobile number" autocomplete="off" maxlength="10" required />
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="captchaInput">Captcha <span>*</span></label>
+                <div class="captcha-row">
+                  <div class="inp-group">
+                    <input type="text" class="form-control" id="captchaInput" placeholder="Enter the code shown" autocomplete="off" required />
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div class="captcha-wrap">
+                    <span class="captcha-hint">Captcha Image</span>
+                    <div class="captcha-img-box" id="captchaBox" title="Click to refresh captcha">
+                      <img id="captchaImg" src="https://npgcfees.in/stuadmis/captcha.php?rand=1961573642" alt="Captcha" />
+                      <button class="captcha-refresh-btn" id="refreshCaptcha" type="button" title="Refresh captcha">
+                        <i class="fa-solid fa-rotate-right"></i>
+                      </button>
+                    </div>
+                    <span class="captcha-hint"><i class="fa-solid fa-rotate-right"></i> Click image to refresh</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-100 mt-1" id="loginBtn" type="button">
+                <span class="btn-txt">Access Fee Portal &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+                <span class="spinner-sm ms-2"></span>
+              </button>
+
+              <div class="info-notice">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>For technical support mail&nbsp;<a href="mailto:helpdesk@sritechnocrat.com">helpdesk@sritechnocrat.com</a>&nbsp;or call&nbsp;<a href="tel:7080126669">7080126669</a>.</p>
+              </div>
+              <div class="warn-notice">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p><strong>Last Date Reminder — </strong>Pay before the deadline to avoid a late fine. Keep your transaction ID safe after payment.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════  STEPS  ══════════════════════════ -->
+  <section class="steps-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Quick Guide</span>
+          <h2>How to <span>Pay Fees</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="step-card">
+                <div class="step-num-ghost">01</div>
+                <div class="step-icon-wrap"><i class="fa-solid fa-right-to-bracket"></i></div>
+                <h4>Login</h4>
+                <p>Enter your Roll No., registered mobile number, and complete the captcha to sign in.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="step-card">
+                <div class="step-num-ghost">02</div>
+                <div class="step-icon-wrap"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h4>View Dues</h4>
+                <p>Your pending fee heads — tuition, exam, development &amp; miscellaneous — appear on the dashboard.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="step-card">
+                <div class="step-num-ghost">03</div>
+                <div class="step-icon-wrap"><i class="fa-solid fa-credit-card"></i></div>
+                <h4>Make Payment</h4>
+                <p>Choose UPI, Debit / Credit Card, or Net Banking and complete the transaction securely.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="step-card">
+                <div class="step-num-ghost">04</div>
+                <div class="step-icon-wrap"><i class="fa-solid fa-receipt"></i></div>
+                <h4>Get Receipt</h4>
+                <p>Download your official fee payment receipt as a PDF immediately after confirmation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════  FEE CATEGORIES  ══════════════════════════ -->
+  <section class="cat-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">What You Can Pay</span>
+          <h2 style="font-size:2rem;font-weight:700;color:#18080d;margin:8px 0 14px;">
+            Fee <span style="color:#A71836;">Categories</span>
+          </h2>
+          <div class="sec-stripe"></div>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="cat-card">
+                <div class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h5>Tuition Fee</h5>
+                <p>Semester-wise tuition charges for all undergraduate programmes.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="cat-card">
+                <div class="cat-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                <h5>Exam Fee</h5>
+                <p>Annual / semester examination fees for University of Lucknow exams.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="cat-card">
+                <div class="cat-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <h5>Development</h5>
+                <p>Infrastructure and campus development charges applicable each session.</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="cat-card">
+                <div class="cat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h5>Other Charges</h5>
+                <p>Library, sports, identity card, and miscellaneous institutional fees.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/loadcomponents.js"></script>
+  <script src="../assets/js/fees.js"></script>
+</body>
+</html>
