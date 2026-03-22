@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examination Form – NPGC Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/exam-form.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ══════════════════════════  LOGIN CARD  ══════════════════════════ -->
+  <div class="container reveal my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow">
+          <div class="row cform g-0">
+
+            <!-- LEFT: red panel -->
+            <div class="col-md-4 get p-4">
+              <h3 class="mb-4">Exam Portal</h3>
+
+              <div class="mb-3 data">
+                <h5><i class="fas fa-university"></i> College</h5>
+                <p>National Post Graduate College<br>Autonomous, CPE &amp; NAAC Grade 'A'<br>Affiliated to Lucknow University</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-clock"></i> Form Session</h5>
+                <p>Examination Forms – June 2026<br>Online submission only (Regular)<br>Back Paper / Exempted → Offline</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-envelope"></i> Support</h5>
+                <p><a href="mailto:support@npgc.in">support@npgc.in</a></p>
+              </div>
+
+              <div class="deadline-card">
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <div>
+                  <strong class="lbl">Deadline</strong>
+                  <span>Last date to submit is <strong style="color:#fef9c3;">25th March, 2026</strong>. Late submissions will not be accepted.</span>
+                </div>
+              </div>
+
+              <div class="pwd-hint">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                  <strong>Password Help</strong>
+                  Your password is the numeric part of your Fee Receipt No.<br>
+                  e.g. <code>200/21912/1-A</code> → Password: <code>21912</code>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: login form -->
+            <div class="col-md-8 p-4 form-right">
+              <h2>Student Login</h2>
+              <p class="sub-title">
+                Fill in your credentials to access the Examination Form.
+                &nbsp;<span>June 2026</span>
+              </p>
+
+              <div class="form-err" id="formErr">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="errMsg">Please fill in all fields.</span>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="rollNo">Student Roll No. <span>*</span></label>
+                <div class="inp-group">
+                  <input type="text" class="form-control" id="rollNo"
+                    placeholder="Enter your roll number" autocomplete="off" required />
+                  <i class="fa-solid fa-id-card inp-icon"></i>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="password">Password <span>*</span></label>
+                <div class="inp-group">
+                  <input type="password" class="form-control has-toggle" id="password"
+                    placeholder="Numeric part of Fee Receipt No." autocomplete="off" required />
+                  <i class="fa-solid fa-lock inp-icon"></i>
+                  <button type="button" class="pwd-toggle" id="pwdToggle" title="Show / hide password">
+                    <i class="fa-solid fa-eye" id="pwdToggleIcon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-100 mt-2" id="loginBtn" type="button">
+                <span class="btn-txt">Proceed to Examination Form &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+                <span class="spinner-sm ms-2"></span>
+              </button>
+
+              <div class="info-notice mt-3">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>Verify all details after login. For any error, contact the concerned faculty counter.</p>
+              </div>
+              <div class="warn-notice">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>Upload <strong>Passport Photo</strong> in JPEG (&lt; 50 KB) and <strong>Signature</strong> in JPEG (&lt; 20 KB) after login. Admit card will be issued separately.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════  INSTRUCTIONS  ══════════════════════════ -->
+  <section class="instr-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">Before You Begin</span>
+          <h2>Important <span>Instructions</span></h2>
+          <div class="sec-stripe"></div>
+          <div class="instr-grid">
+
+            <div class="instr-card">
+              <div class="instr-num">1</div>
+              <div class="instr-icon"><i class="fa-solid fa-key"></i></div>
+              <p>Your <strong>password</strong> is the numeric part of your latest Fee Receipt No. e.g. Receipt <strong>200/21912/1-A</strong> → Password: <strong>21912</strong></p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">2</div>
+              <div class="instr-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <p><strong>Verify all details</strong> carefully after login. In case of any error, contact the concerned faculty counter immediately.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">3</div>
+              <div class="instr-icon"><i class="fa-solid fa-user"></i></div>
+              <p>Provide your <strong>Date of Birth</strong>, <strong>Mobile Number</strong>, and your <strong>Email ID</strong> (if available) in the form.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">4</div>
+              <div class="instr-icon"><i class="fa-solid fa-image"></i></div>
+              <p>Upload your <strong>Passport Size Photograph</strong> in JPEG (less than <strong>50 KB</strong>) and your <strong>Signature</strong> in JPEG (less than <strong>20 KB</strong>).</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">5</div>
+              <div class="instr-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <p>Press the <strong>Submit</strong> button. You will receive a confirmation copy of your Examination Form on successful submission.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">6</div>
+              <div class="instr-icon"><i class="fa-solid fa-id-card"></i></div>
+              <p><strong>Admit card</strong> will be issued later. Students must bring both the <strong>Admit Card</strong> and <strong>i-Card</strong> to appear in the examination.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">7</div>
+              <div class="instr-icon"><i class="fa-solid fa-building"></i></div>
+              <p>If a student does not have their i-Card, they must get the Admit Card <strong>verified from the faculty counter in-charge</strong> before the exam.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">8</div>
+              <div class="instr-icon"><i class="fa-solid fa-ban"></i></div>
+              <p><strong>Only Regular examination forms</strong> are submitted online. Back Paper / Exempted forms must be submitted <strong>offline</strong> at the faculty counters.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">9</div>
+              <div class="instr-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+              <p>Ensure you submit before the <strong>last date: 25th March, 2026</strong>. Late or incomplete submissions will not be entertained.</p>
+            </div>
+            <div class="instr-card">
+              <div class="instr-num">10</div>
+              <div class="instr-icon"><i class="fa-solid fa-envelope"></i></div>
+              <p>In case of any query, mail us at <a href="mailto:support@npgc.in" style="color:#A71836;font-weight:600;">support@npgc.in</a>. Response within 1–2 working days.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/exam-form.js"></script>
+  <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>

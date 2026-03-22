@@ -323,6 +323,21 @@ a   { text-decoration: none; }
 .msg-name { font-family: var(--FC); font-size: 1.1rem; font-weight: 800; color: var(--TH); display: block; line-height: 1.2; }
 .msg-role { font-size: .75rem; color: var(--P); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 
+ /* Ensuring person images are perfectly circular and professional */
+.msg-av-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #dc3545; /* Matches your danger/red theme */
+    margin-right: 15px;
+}
+.msg-person {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
 /*
     TEAM SECTION
 */

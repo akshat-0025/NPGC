@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examination Result – NPGC Lucknow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ══════════════════════════════
+       BASE
+    ══════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Arial', sans-serif; overflow-x: hidden; background: #f8f5f5; }
+
+    /* ══════════════════════════════
+       CARD
+    ══════════════════════════════ */
+    .card {
+      border: none; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10); transition: box-shadow 0.3s ease;
+    }
+    .cform:hover { box-shadow: 0 10px 32px rgba(167,24,54,0.22); }
+
+    /* red left panel */
+    .get { background-color: #A71836; color: white; position: relative; overflow: hidden; }
+    .get::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .get::after {
+      content: ''; position: absolute; top:0; left:0; right:0; height:3px; z-index:1;
+      background: linear-gradient(90deg,rgba(255,255,255,0.4),rgba(255,255,255,0.1),rgba(255,255,255,0.4));
+      background-size: 200%; animation: shimmerBar 3s linear infinite;
+    }
+    @keyframes shimmerBar { 0%{background-position:0%} 100%{background-position:200%} }
+    .get > * { position: relative; z-index: 1; }
+
+    .get h3 { font-size: 1.4rem; font-weight: 700; position: relative; padding-bottom: 14px; margin-bottom: 24px !important; }
+    .get h3::after { content: ''; position: absolute; bottom:0; left:0; width:36px; height:3px; background:rgba(255,255,255,0.45); border-radius:2px; }
+
+    .data h5 { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .data h5 i { opacity: 0.7; transition: transform 0.2s; }
+    .data:hover h5 i { transform: scale(1.15); }
+    .data p  { font-size: 0.86rem; line-height: 1.65; opacity: 0.82; margin: 0; }
+    .data a  { color: #fff !important; transition: opacity 0.2s; text-decoration: none; }
+    .data a:hover { opacity: 0.7; }
+
+    /* stat mini-cards in red panel */
+    .stat-rows { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .stat-row {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px; padding: 10px 14px; transition: background 0.2s;
+    }
+    .stat-row:hover { background: rgba(255,255,255,0.17); }
+    .stat-icon { width: 34px; height: 34px; background: rgba(255,255,255,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+    .stat-text { font-size: 0.8rem; line-height: 1.35; min-width: 0; }
+    .stat-text strong { display: block; font-weight: 600; font-size: 0.82rem; }
+    .stat-text span { opacity: 0.65; font-size: 0.74rem; }
+
+    /* right form panel */
+    .form-right h2 { font-size: 1.5rem; font-weight: 700; color: #18080d; position: relative; padding-bottom: 14px; margin-bottom: 8px !important; }
+    .form-right h2::after { content: ''; position: absolute; bottom:0; left:0; width:36px; height:3px; background:#A71836; border-radius:2px; }
+    .form-right .sub-title { font-size: 0.78rem; color: #6b4d56; margin-bottom: 24px; margin-top: 10px; }
+    .form-right .sub-title span { background: rgba(167,24,54,0.07); border: 1px solid rgba(167,24,54,0.18); color: #A71836; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.74rem; }
+
+    /* exam type toggle */
+    .type-toggle { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .type-btn {
+      flex: 1; min-width: 90px; padding: 10px 14px; border-radius: 6px;
+      border: 1.5px solid #e3d8db; background: #fff; color: #6b4d56;
+      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.5px; cursor: pointer; text-align: center;
+      transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 7px;
+    }
+    .type-btn i { font-size: 0.8rem; }
+    .type-btn:hover { border-color: #A71836; color: #A71836; background: rgba(167,24,54,0.03); }
+    .type-btn.active { background: #A71836; border-color: #A71836; color: #fff; box-shadow: 0 4px 14px rgba(167,24,54,0.3); }
+
+    .field-lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6b4d56; margin-bottom: 6px; display: block; }
+    .field-lbl span { color: #A71836; }
+
+    .inp-group { position: relative; }
+    .inp-group i.inp-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #b89098; font-size: 0.85rem; pointer-events: none; transition: color 0.2s; z-index: 5; }
+    .inp-group .form-control { padding-left: 38px; }
+    .inp-group:focus-within i.inp-icon { color: #A71836; }
+
+    .form-control { border-radius: 6px; border: 1.5px solid #e3d8db; font-size: 0.92rem; font-family: 'Inter', sans-serif; color: #18080d; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
+    .form-control::placeholder { color: #b0929a; font-size: 0.88rem; }
+    .form-control:focus { border-color: #A71836 !important; box-shadow: 0 0 0 3px rgba(167,24,54,0.10) !important; outline: none; }
+
+    .form-err { display:none; background:rgba(167,24,54,0.07); border:1px solid rgba(167,24,54,0.3); color:#A71836; font-size:0.8rem; padding:10px 14px; border-radius:6px; margin-bottom:16px; align-items:center; gap:8px; }
+    .form-err.show { display:flex; }
+
+    .btn-primary { background-color: #A71836 !important; border-color: #A71836 !important; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 1px; font-size: 0.88rem; padding: 12px; border-radius: 6px; transition: all 0.3s; position: relative; overflow: hidden; }
+    .btn-primary::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.12); opacity: 0; transition: opacity 0.25s; }
+    .btn-primary:hover { background-color: #85122b !important; border-color: #85122b !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(167,24,54,0.35) !important; }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary .spinner-sm { display:none; width:14px; height:14px; border:2px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 0.6s linear infinite; vertical-align:middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-primary.loading .spinner-sm { display: inline-block; }
+    .btn-primary.loading .btn-txt { opacity: 0.6; }
+
+    .info-notice { background:rgba(167,24,54,0.05); border:1px solid rgba(167,24,54,0.18); border-radius:6px; padding:10px 14px; display:flex; gap:10px; align-items:flex-start; margin-top:14px; }
+    .info-notice > i { color:#A71836; font-size:0.85rem; margin-top:1px; flex-shrink:0; }
+    .info-notice p { font-size:0.78rem; color:#6b4d56; margin:0; line-height:1.5; }
+    .info-notice p a { color:#A71836; text-decoration:none; font-weight:600; }
+    .info-notice p a:hover { text-decoration:underline; }
+
+    /* ══════════════════════════════
+       AVAILABLE RESULTS SECTION
+    ══════════════════════════════ */
+    .results-sec { background: #fff; padding: 70px 0 80px; }
+    .results-sec .sec-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #A71836; }
+    .results-sec h2 { font-size: 2rem; font-weight: 700; color: #18080d; margin: 8px 0 14px; }
+    .results-sec h2 span { color: #A71836; }
+    .sec-stripe { width:38px; height:4px; background:#A71836; border-radius:2px; margin-bottom: 32px; }
+
+    /* search + count bar */
+    .filter-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    .filter-search {
+      position: relative; flex: 1; min-width: 200px;
+    }
+    .filter-search i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #b89098; font-size: 0.82rem; pointer-events: none; }
+    .filter-search input { padding: 9px 14px 9px 34px; border: 1.5px solid #e3d8db; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.86rem; color: #18080d; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s; background: #fff; }
+    .filter-search input:focus { border-color: #A71836; box-shadow: 0 0 0 3px rgba(167,24,54,0.08); }
+    .filter-search input::placeholder { color: #b0929a; }
+    .result-count { font-size: 0.76rem; font-weight: 600; color: #6b4d56; white-space: nowrap; letter-spacing: 0.3px; }
+    .result-count strong { color: #A71836; }
+
+    /* programme filter chips */
+    .prog-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .pf-btn {
+      padding: 5px 14px; border-radius: 999px; border: 1.5px solid #e3d8db;
+      background: #fff; color: #6b4d56; font-size: 0.74rem; font-weight: 600;
+      letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .pf-btn:hover, .pf-btn.active { background: #A71836; border-color: #A71836; color: #fff; }
+
+    /* course grid */
+    .course-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+    .course-chip {
+      background: #f8f5f5; border: 1.5px solid #e8dede; border-radius: 8px;
+      padding: 12px 14px; cursor: pointer; transition: all 0.25s;
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+    }
+    .course-chip:hover { border-color: #A71836; background: rgba(167,24,54,0.04); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(167,24,54,0.10); }
+    .course-chip .cc-icon { width: 30px; height: 30px; background: rgba(167,24,54,0.08); border: 1px solid rgba(167,24,54,0.18); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: #A71836; font-size: 0.72rem; flex-shrink: 0; font-weight: 700; }
+    .course-chip .cc-name { font-size: 0.78rem; font-weight: 600; color: #18080d; line-height: 1.3; }
+    .course-chip .cc-sem { font-size: 0.68rem; color: #A71836; font-weight: 700; margin-top: 1px; }
+    .course-chip.hidden { display: none; }
+
+    /* ══════════════════════════════
+       REVEAL
+    ══════════════════════════════ */
+    .reveal { opacity:0; transform:translateY(50px); transition:all 0.85s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (min-width: 1025px) {
+      .containers { padding-left: 100px; }
+      .intro-section .heading { font-size: 66px; }
+      .intro-section .description { font-size: 18px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .containers { padding-left: 50px; background-attachment: scroll; }
+      .intro-section .heading { font-size: 48px; }
+      .intro-section .description { font-size: 16px; max-width: 500px; }
+      .info-strip-inner { grid-template-columns: repeat(2,1fr); }
+      .si-item:nth-child(2) { border-right: none; }
+      .si-item:nth-child(3) { border-top: 1px solid #e8dede; }
+      .si-item:nth-child(4) { border-top: 1px solid #e8dede; border-right: none; }
+      .course-grid { grid-template-columns: repeat(3,1fr); }
+      .results-sec h2 { font-size: 1.7rem; }
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+      .containers { padding: 0 24px; background-attachment: scroll; }
+      .intro-section { padding-bottom: 60px; padding-top: 100px; }
+      .intro-section .heading { font-size: 40px; }
+      .intro-section .description { font-size: 15px; }
+      .container { padding-left: 16px; padding-right: 16px; }
+      .container.reveal { margin-top: 28px !important; }
+      .col-md-4.get, .col-md-8.form-right { width: 100%; max-width: 100%; }
+      .info-strip-inner { grid-template-columns: repeat(2,1fr); }
+      .si-item:nth-child(2) { border-right: none; }
+      .si-item:nth-child(3) { border-top: 1px solid #e8dede; }
+      .si-item:nth-child(4) { border-top: 1px solid #e8dede; border-right: none; }
+      .course-grid { grid-template-columns: repeat(2,1fr); }
+      .results-sec { padding: 50px 0 60px; }
+      .results-sec h2 { font-size: 1.6rem; }
+      .sec-stripe { margin-bottom: 24px; }
+      .stat-rows { flex-direction: row; flex-wrap: wrap; }
+      .stat-row { flex: 1 1 calc(50% - 5px); min-width: 130px; }
+    }
+    @media (max-width: 575px) {
+      .containers { padding: 0 16px; background-attachment: scroll; min-height: 100svh; }
+      .intro-section { padding-bottom: 50px; padding-top: 80px; }
+      .intro-section .heading { font-size: 32px; margin-bottom: 12px; }
+      .intro-section .description { font-size: 13px; max-width: 100%; }
+      .hero-pill { font-size: 0.66rem; padding: 5px 12px; margin-bottom: 14px; }
+      .update-banner { font-size: 0.7rem; padding: 7px 12px; margin-top: 14px; }
+      .hero-chips { gap: 7px; margin-top: 12px; }
+      .h-chip { font-size: 0.67rem; padding: 4px 10px; }
+
+      .container { padding-left: 14px !important; padding-right: 14px !important; }
+      .container.reveal { margin-top: 20px !important; margin-bottom: 0 !important; }
+      .col-md-4.get, .col-md-8.form-right { width: 100%; max-width: 100%; }
+      .get.p-4        { padding: 20px 16px !important; }
+      .form-right.p-4 { padding: 22px 16px 24px !important; }
+      .get h3, .form-right h2 { font-size: 1.2rem; }
+      .mb-3 { margin-bottom: 14px !important; }
+      .field-lbl { margin-bottom: 5px; }
+
+      .type-toggle { gap: 6px; }
+      .type-btn { font-size: 0.74rem; padding: 9px 10px; min-width: 80px; }
+
+      .info-strip-inner { grid-template-columns: 1fr; }
+      .si-item { border-right: none; border-bottom: 1px solid #e8dede; padding: 16px 14px; }
+      .si-item:last-child { border-bottom: none; }
+
+      .results-sec { padding: 36px 0 44px; }
+      .results-sec .container { padding-left: 14px !important; padding-right: 14px !important; }
+      .results-sec h2 { font-size: 1.35rem; }
+      .sec-stripe { margin-bottom: 20px; }
+      .course-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .course-chip { padding: 10px 10px; gap: 8px; }
+      .course-chip .cc-icon { width: 26px; height: 26px; font-size: 0.64rem; }
+      .course-chip .cc-name { font-size: 0.72rem; }
+      .course-chip .cc-sem  { font-size: 0.63rem; }
+      .filter-bar { gap: 8px; }
+      .info-notice { padding: 9px 12px; }
+      .info-notice p { font-size: 0.72rem; }
+      .row.g-3 { --bs-gutter-x: 10px; --bs-gutter-y: 10px; }
+    }
+    @media (max-width: 380px) {
+      .container { padding-left: 10px !important; padding-right: 10px !important; }
+      .container.reveal { margin-top: 14px !important; }
+      .get.p-4        { padding: 16px 12px !important; }
+      .form-right.p-4 { padding: 18px 12px 20px !important; }
+      .get h3, .form-right h2 { font-size: 1.05rem; }
+      .form-control, .btn-primary { font-size: 0.85rem; }
+      .btn-primary { padding: 11px; }
+      .field-lbl { font-size: 0.66rem; }
+      .intro-section .heading { font-size: 26px; }
+      .intro-section .description { font-size: 12px; }
+      .hero-chips { display: none; }
+      .course-grid { grid-template-columns: 1fr; }
+      .row.g-3 { --bs-gutter-x: 8px; --bs-gutter-y: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ══════════════════════  RESULT CARD  ══════════════════════ -->
+  <div class="container reveal my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow">
+          <div class="row cform g-0">
+
+            <!-- LEFT: red info panel -->
+            <div class="col-md-4 get p-4">
+              <h3 class="mb-4">Result Portal</h3>
+
+              <div class="mb-3 data">
+                <h5><i class="fas fa-university"></i> College</h5>
+                <p>National Post Graduate College<br>Autonomous, CPE &amp; NAAC Grade 'A'<br>Affiliated to Lucknow University</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-calendar-alt"></i> Session</h5>
+                <p>Examination Result – DEC-2025<br>Last Updated: 22 Feb 2026</p>
+              </div>
+              <div class="mb-3 data">
+                <h5><i class="fas fa-envelope"></i> Support</h5>
+                <p><a href="mailto:support@npgc.in">support@npgc.in</a></p>
+              </div>
+
+              <div class="stat-rows">
+                <div class="stat-row">
+                  <div class="stat-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+                  <div class="stat-text"><strong>Regular</strong><span>Main semester results</span></div>
+                </div>
+                <div class="stat-row">
+                  <div class="stat-icon"><i class="fa-solid fa-file-circle-exclamation"></i></div>
+                  <div class="stat-text"><strong>Exempted</strong><span>Exemption category</span></div>
+                </div>
+                <div class="stat-row">
+                  <div class="stat-icon"><i class="fa-solid fa-file-circle-minus"></i></div>
+                  <div class="stat-text"><strong>Back Paper</strong><span>Supplementary results</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: form -->
+            <div class="col-md-8 p-4 form-right">
+              <h2>Check Your Result</h2>
+              <p class="sub-title">
+                Select exam type and enter your Roll Number to view result.
+                &nbsp;<span>DEC-2025</span>
+              </p>
+
+              <!-- Exam type toggle -->
+              <div class="type-toggle" id="typeToggle">
+                <button class="type-btn active" data-type="Regular">
+                  <i class="fa-solid fa-file-circle-check"></i> Regular
+                </button>
+                <button class="type-btn" data-type="Exempted">
+                  <i class="fa-solid fa-file-circle-exclamation"></i> Exempted
+                </button>
+                <button class="type-btn" data-type="BackPaper">
+                  <i class="fa-solid fa-file-circle-minus"></i> Back Paper
+                </button>
+              </div>
+
+              <div class="form-err" id="formErr">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="errMsg">Please enter your roll number.</span>
+              </div>
+
+              <div class="mb-3">
+                <label class="field-lbl" for="rollNo">Student Roll No. <span>*</span></label>
+                <div class="inp-group">
+                  <input type="text" class="form-control" id="rollNo"
+                    placeholder="Enter your roll number" autocomplete="off" required />
+                  <i class="fa-solid fa-id-card inp-icon"></i>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-100 mt-2" id="resultBtn" type="button">
+                <span class="btn-txt">View My Result &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+                <span class="spinner-sm ms-2"></span>
+              </button>
+
+              <div class="info-notice mt-3">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                  For any discrepancy in your result, contact the exam section.
+                  View&nbsp;<a href="https://result.npgc.in/PreviousYearResults.aspx" target="_blank">Previous Year Results</a>&nbsp;or mail&nbsp;
+                  <a href="mailto:support@npgc.in">support@npgc.in</a>.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════  AVAILABLE RESULTS  ══════════════════════ -->
+  <section class="results-sec reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <span class="sec-label">DEC-2025 Session</span>
+          <h2>Available <span>Results</span></h2>
+          <div class="sec-stripe"></div>
+
+          <!-- filter bar -->
+          <div class="filter-bar">
+            <div class="filter-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="courseSearch" placeholder="Search programme…" />
+            </div>
+            <span class="result-count" id="courseCount"><strong>65</strong> results</span>
+          </div>
+
+          <!-- programme filters -->
+          <div class="prog-filters">
+            <button class="pf-btn active" data-prog="all">All</button>
+            <button class="pf-btn" data-prog="ba">B.A.</button>
+            <button class="pf-btn" data-prog="bcom">B.COM.</button>
+            <button class="pf-btn" data-prog="bca">B.C.A.</button>
+            <button class="pf-btn" data-prog="bba">B.B.A.</button>
+            <button class="pf-btn" data-prog="bsc">B.SC.</button>
+            <button class="pf-btn" data-prog="bvoc">B.VOC.</button>
+            <button class="pf-btn" data-prog="ma">M.A.</button>
+            <button class="pf-btn" data-prog="mcom">M.COM. / M.SC.</button>
+            <button class="pf-btn" data-prog="mvoc">M.VOC.</button>
+          </div>
+
+          <!-- course chips grid -->
+          <div class="course-grid" id="courseGrid">
+            <!-- BA -->
+            <a class="course-chip" data-prog="ba" data-name="B.A. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BA</div><div><div class="cc-name">B.A.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BA</div><div><div class="cc-name">B.A.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BA</div><div><div class="cc-name">B.A.</div><div class="cc-sem">Semester 5</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A. Semester 7" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BA</div><div><div class="cc-name">B.A.</div><div class="cc-sem">Semester 7</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A.J.M.C. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">JMC</div><div><div class="cc-name">B.A.J.M.C.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A.J.M.C. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">JMC</div><div><div class="cc-name">B.A.J.M.C.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ba" data-name="B.A.J.M.C. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">JMC</div><div><div class="cc-name">B.A.J.M.C.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- BBA -->
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BBA</div><div><div class="cc-name">B.B.A.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BBA</div><div><div class="cc-name">B.B.A.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BBA</div><div><div class="cc-name">B.B.A.</div><div class="cc-sem">Semester 5</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Digital Business Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">DB</div><div><div class="cc-name">B.B.A. Digital Business</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Digital Business Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">DB</div><div><div class="cc-name">B.B.A. Digital Business</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. Digital Business Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">DB</div><div><div class="cc-name">B.B.A. Digital Business</div><div class="cc-sem">Semester 5</div></div></a>
+            <a class="course-chip" data-prog="bba" data-name="B.B.A. MS Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MS</div><div><div class="cc-name">B.B.A. M.S.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- BCA -->
+            <a class="course-chip" data-prog="bca" data-name="B.C.A. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BCA</div><div><div class="cc-name">B.C.A.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bca" data-name="B.C.A. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BCA</div><div><div class="cc-name">B.C.A.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bca" data-name="B.C.A. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BCA</div><div><div class="cc-name">B.C.A.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- BCOM -->
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BC</div><div><div class="cc-name">B.COM.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BC</div><div><div class="cc-name">B.COM.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BC</div><div><div class="cc-name">B.COM.</div><div class="cc-sem">Semester 5</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. eCommerce Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">EC</div><div><div class="cc-name">B.COM. eCommerce</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Hons. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BH</div><div><div class="cc-name">B.COM. Hons.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Hons. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BH</div><div><div class="cc-name">B.COM. Hons.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bcom" data-name="B.COM. Hons. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BH</div><div><div class="cc-name">B.COM. Hons.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- BSC -->
+            <a class="course-chip" data-prog="bsc" data-name="B.SC. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BSC</div><div><div class="cc-name">B.SC.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bsc" data-name="B.SC. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BSC</div><div><div class="cc-name">B.SC.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bsc" data-name="B.SC. Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BSC</div><div><div class="cc-name">B.SC.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- BVOC -->
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Banking Finance Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BF</div><div><div class="cc-name">B.VOC. Banking &amp; Finance</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Banking Finance Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BF</div><div><div class="cc-name">B.VOC. Banking &amp; Finance</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Banking Finance Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BF</div><div><div class="cc-name">B.VOC. Banking &amp; Finance</div><div class="cc-sem">Semester 5</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Hospital Management Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">HM</div><div><div class="cc-name">B.VOC. Hospital Mgmt.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Hotel Management Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">HTL</div><div><div class="cc-name">B.VOC. Hotel Mgmt.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Medical Lab Technology Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MLT</div><div><div class="cc-name">B.VOC. Medical Lab Tech.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Medical Lab Technology Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MLT</div><div><div class="cc-name">B.VOC. Medical Lab Tech.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Operation Theatre Technology Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">OT</div><div><div class="cc-name">B.VOC. OT Technology</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Operation Theatre Technology Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">OT</div><div><div class="cc-name">B.VOC. OT Technology</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Physiotherapy Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PT</div><div><div class="cc-name">B.VOC. Physiotherapy</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Physiotherapy Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PT</div><div><div class="cc-name">B.VOC. Physiotherapy</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Software Development Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">SD</div><div><div class="cc-name">B.VOC. Software Dev.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Software Development Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">SD</div><div><div class="cc-name">B.VOC. Software Dev.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="bvoc" data-name="B.VOC. Software Development Semester 5" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">SD</div><div><div class="cc-name">B.VOC. Software Dev.</div><div class="cc-sem">Semester 5</div></div></a>
+            <!-- MA -->
+            <a class="course-chip" data-prog="ma" data-name="M.A. Anthropology Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MA</div><div><div class="cc-name">M.A. Anthropology</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Anthropology Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MA</div><div><div class="cc-name">M.A. Anthropology</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Economics Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">EC</div><div><div class="cc-name">M.A. Economics</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Economics Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">EC</div><div><div class="cc-name">M.A. Economics</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. English Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">EN</div><div><div class="cc-name">M.A. English</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. English Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">EN</div><div><div class="cc-name">M.A. English</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Geography Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">GE</div><div><div class="cc-name">M.A. Geography</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Geography Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">GE</div><div><div class="cc-name">M.A. Geography</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Political Science Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PS</div><div><div class="cc-name">M.A. Political Science</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Political Science Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PS</div><div><div class="cc-name">M.A. Political Science</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Psychology Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PY</div><div><div class="cc-name">M.A. Psychology</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="ma" data-name="M.A. Psychology Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">PY</div><div><div class="cc-name">M.A. Psychology</div><div class="cc-sem">Semester 3</div></div></a>
+            <!-- MCOM / MSC / MPH -->
+            <a class="course-chip" data-prog="mcom" data-name="M.COM. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MC</div><div><div class="cc-name">M.COM.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.COM. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MC</div><div><div class="cc-name">M.COM.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.P.H. Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MPH</div><div><div class="cc-name">M.P.H.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.P.H. Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MPH</div><div><div class="cc-name">M.P.H.</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.SC. Anthropology Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MSC</div><div><div class="cc-name">M.SC. Anthropology</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.SC. Anthropology Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">MSC</div><div><div class="cc-name">M.SC. Anthropology</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.SC. Chemistry Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">CH</div><div><div class="cc-name">M.SC. Chemistry</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mcom" data-name="M.SC. Chemistry Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">CH</div><div><div class="cc-name">M.SC. Chemistry</div><div class="cc-sem">Semester 3</div></div></a>
+            <!-- MVOC -->
+            <a class="course-chip" data-prog="mvoc" data-name="M.VOC. Banking Stock Insurance Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BSI</div><div><div class="cc-name">M.VOC. Banking, Stock &amp; Insurance</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mvoc" data-name="M.VOC. Banking Stock Insurance Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">BSI</div><div><div class="cc-name">M.VOC. Banking, Stock &amp; Insurance</div><div class="cc-sem">Semester 3</div></div></a>
+            <a class="course-chip" data-prog="mvoc" data-name="M.VOC. Software E-Governance Semester 1" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">SEG</div><div><div class="cc-name">M.VOC. Software &amp; E-Gov.</div><div class="cc-sem">Semester 1</div></div></a>
+            <a class="course-chip" data-prog="mvoc" data-name="M.VOC. Software E-Governance Semester 3" href="https://result.npgc.in/Default.aspx"><div class="cc-icon">SEG</div><div><div class="cc-name">M.VOC. Software &amp; E-Gov.</div><div class="cc-sem">Semester 3</div></div></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ── Exam type toggle ── */
+    let selectedType = 'Regular';
+    document.querySelectorAll('.type-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedType = btn.dataset.type;
+      });
+    });
+
+    /* ── Result submit ── */
+    const btn    = document.getElementById('resultBtn');
+    const errBox = document.getElementById('formErr');
+    const errMsg = document.getElementById('errMsg');
+
+    btn.addEventListener('click', function () {
+      const roll = document.getElementById('rollNo').value.trim();
+      errBox.classList.remove('show');
+      if (!roll) {
+        errMsg.textContent = 'Please enter your Roll Number.';
+        errBox.classList.add('show'); return;
+      }
+      btn.classList.add('loading');
+      btn.querySelector('.fa-arrow-right-to-bracket').style.display = 'none';
+      setTimeout(() => {
+        const form = document.createElement('form');
+        form.method = 'POST'; form.action = 'https://result.npgc.in/Default.aspx';
+        [['rollno', roll], ['examtype', selectedType]].forEach(([n, v]) => {
+          const inp = document.createElement('input');
+          inp.type='hidden'; inp.name=n; inp.value=v; form.appendChild(inp);
+        });
+        document.body.appendChild(form); form.submit();
+      }, 700);
+    });
+
+    document.getElementById('rollNo').addEventListener('keydown', e => {
+      if (e.key === 'Enter') btn.click();
+    });
+
+    /* ── Course search filter ── */
+    const chips      = document.querySelectorAll('.course-chip');
+    const searchInp  = document.getElementById('courseSearch');
+    const countEl    = document.getElementById('courseCount');
+    let activeFilter = 'all';
+
+    function applyFilters() {
+      const q = searchInp.value.toLowerCase();
+      let visible = 0;
+      chips.forEach(chip => {
+        const nameMatch = chip.dataset.name.toLowerCase().includes(q);
+        const progMatch = activeFilter === 'all' || chip.dataset.prog === activeFilter;
+        if (nameMatch && progMatch) { chip.classList.remove('hidden'); visible++; }
+        else { chip.classList.add('hidden'); }
+      });
+      countEl.innerHTML = `<strong>${visible}</strong> result${visible !== 1 ? 's' : ''}`;
+    }
+
+    searchInp.addEventListener('input', applyFilters);
+
+    document.querySelectorAll('.pf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.prog;
+        applyFilters();
+      });
+    });
+
+    /* ── Reveal on scroll ── */
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('active'); revObs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+    /* ── Staggered course chips ── */
+    const scObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const allChips = Array.from(chips);
+          const idx = allChips.indexOf(entry.target);
+          entry.target.style.transitionDelay = (idx % 4) * 0.04 + 's';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          scObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    chips.forEach(c => {
+      c.style.opacity = '0'; c.style.transform = 'translateY(16px)';
+      c.style.transition = 'opacity 0.35s ease, transform 0.35s ease, border-color 0.25s, box-shadow 0.25s, transform 0.25s';
+      scObs.observe(c);
+    });
+  </script>
+  <script src="../assets/js/loadcomponents.js"></script>
+</body>
+</html>
