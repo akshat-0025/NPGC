@@ -10,6 +10,7 @@
     align-items: center;
     overflow: hidden;
     background: #000;
+    background: url('../images/eligibility-hero.avif') no-repeat center center/cover;
 }
 
 .gradient-overlay-v {

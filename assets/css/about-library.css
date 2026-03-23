@@ -136,7 +136,7 @@ body {
 }
 
 .timings-section h3 { color: var(--primary); margin-bottom: 20px; }
-.timing-flex { display: flex; gap: 15px; flex-wrap: wrap; }
+.timing-flex { display: grid; grid-template-columns: auto auto; gap:10px;}
 
 .time-box {
     background: white;
